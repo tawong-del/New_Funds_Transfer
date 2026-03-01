@@ -66,18 +66,19 @@ function TransferFundsPage() {
   return (
     <main className="TransferFundsPage" aria-label="Transfer funds">
       <header className="TransferFundsPage-header">
-        <h1 className="TransferFundsPage-title">Transfer funds</h1>
+        <h1>Transfer funds</h1>
         <p className="TransferFundsPage-subtitle">Qmobile</p>
+        <span className="TransferFundsPage-badge" aria-hidden="true">Prototype</span>
       </header>
 
       <section className="TransferFundsPage-balances" aria-label="Account balances">
-        <div className="TransferFundsPage-balance-card q-card">
+        <div className="TransferFundsPage-balance-card">
           <span className="TransferFundsPage-balance-label">Available balance</span>
           <span className="TransferFundsPage-balance-value" data-balance="available">
             {formatCurrency(availableBalance)}
           </span>
         </div>
-        <div className="TransferFundsPage-balance-card q-card">
+        <div className="TransferFundsPage-balance-card">
           <span className="TransferFundsPage-balance-label">Pending</span>
           <span className="TransferFundsPage-balance-value" data-balance="pending">
             {formatCurrency(pendingBalance)}
@@ -86,7 +87,7 @@ function TransferFundsPage() {
       </section>
 
       {showSuccess && (
-        <section className="TransferFundsPage-success q-card" role="status" aria-live="polite">
+        <section className="TransferFundsPage-success" role="status" aria-live="polite">
           <div className="TransferFundsPage-success-header">
             <span className="TransferFundsPage-success-status">Completed</span>
             <button
@@ -102,16 +103,13 @@ function TransferFundsPage() {
         </section>
       )}
 
-      <section className="TransferFundsPage-form-section q-card">
+      <section className="TransferFundsPage-form-section">
         <form className="TransferFundsPage-form" onSubmit={handleTransfer} noValidate>
           <div className="TransferFundsPage-field">
-            <label htmlFor="from-account" className="q-input-label">
-              From account
-            </label>
+            <label htmlFor="from-account">From account</label>
             <input
               id="from-account"
               type="text"
-              className="q-input"
               value={fromAccount}
               onChange={(e) => setFromAccount(e.target.value)}
               placeholder="From account"
@@ -119,13 +117,10 @@ function TransferFundsPage() {
             />
           </div>
           <div className="TransferFundsPage-field">
-            <label htmlFor="to-account" className="q-input-label">
-              To account
-            </label>
+            <label htmlFor="to-account">To account</label>
             <input
               id="to-account"
               type="text"
-              className="q-input"
               value={toAccount}
               onChange={(e) => setToAccount(e.target.value)}
               placeholder="To account or recipient"
@@ -133,15 +128,13 @@ function TransferFundsPage() {
             />
           </div>
           <div className="TransferFundsPage-field">
-            <label htmlFor="amount" className="q-input-label">
-              Amount
-            </label>
+            <label htmlFor="amount">Amount</label>
             <input
               id="amount"
               type="number"
               min="0"
               step="0.01"
-              className={`q-input ${amountError ? 'q-input--error' : ''}`}
+              className={amountError ? 'q-input--error' : ''}
               value={amount}
               onChange={handleAmountChange}
               onBlur={handleAmountBlur}
@@ -156,7 +149,7 @@ function TransferFundsPage() {
               </span>
             )}
           </div>
-          <button type="submit" className="TransferFundsPage-submit q-button q-button--primary">
+          <button type="submit" className="TransferFundsPage-submit">
             Transfer
           </button>
         </form>

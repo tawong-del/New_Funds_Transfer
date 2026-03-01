@@ -3,63 +3,121 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--ads-size-s);
-  padding: var(--ads-size-micro) var(--ads-size-s);
-  background-color: var(--ads-color-body-200);
-  border-bottom: var(--ads-border-width-hairline) solid var(--ads-color-body-300);
-  font-size: var(--ads-font-size-xs);
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+  background-color: #e8e8e8;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 380px) {
+  .DemoBar {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    font-size: 0.8125rem;
+  }
+  .DemoBar-segment button {
+    padding: 0.4rem 0.55rem;
+  }
+}
+
+[data-theme="dark"] .DemoBar {
+  background-color: #2a2a2a;
+  border-bottom-color: #404040;
 }
 
 .DemoBar-label {
-  color: var(--ads-color-body-contrast-700);
-  font-weight: var(--ads-font-weight-medium);
+  color: #333;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .DemoBar-label {
+  color: #e0e0e0;
 }
 
 .DemoBar-actions {
   display: flex;
   align-items: center;
-  gap: var(--ads-size-xs);
+  gap: 0.5rem;
 }
 
 .DemoBar-segment {
   display: flex;
-  border-radius: var(--ads-border-radius-s);
+  border-radius: 6px;
   overflow: hidden;
-  border: var(--ads-border-width-thin) solid var(--ads-color-body-300);
+  border: 1px solid #ccc;
+}
+
+[data-theme="dark"] .DemoBar-segment {
+  border-color: #505050;
 }
 
 .DemoBar-segment button {
   margin: 0;
-  padding: var(--ads-size-nano) var(--ads-size-xxs);
+  padding: 0.35rem 0.75rem;
   font-family: inherit;
-  font-size: var(--ads-font-size-xs);
-  font-weight: var(--ads-font-weight-medium);
+  font-size: 0.875rem;
+  font-weight: 500;
   border: none;
   cursor: pointer;
   background-color: transparent;
-  color: var(--ads-color-body-contrast-700);
+  color: #333;
+}
+
+[data-theme="dark"] .DemoBar-segment button {
+  color: #e0e0e0;
 }
 
 .DemoBar-segment button + button {
-  border-left: var(--ads-border-width-hairline) solid var(--ads-color-body-300);
+  border-left: 1px solid #ccc;
+}
+
+[data-theme="dark"] .DemoBar-segment button + button {
+  border-left-color: #505050;
 }
 
 .DemoBar-segment button[aria-pressed="true"] {
-  background-color: var(--ads-color-primary-400);
-  color: var(--ads-color-primary-contrast-400);
+  background-color: #0066cc;
+  color: #fff;
 }
 
 .DemoBar-segment button:hover:not([aria-pressed="true"]) {
-  background-color: var(--ads-color-body-300);
+  background-color: #ddd;
+}
+
+[data-theme="dark"] .DemoBar-segment button:hover:not([aria-pressed="true"]) {
+  background-color: #404040;
 }
 
 .DemoBar-segment button:focus-visible {
-  outline: var(--ads-border-width-thin) solid var(--ads-color-focus-indicator-400);
-  outline-offset: var(--ads-size-nano);
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
 }
 
 .DemoBar-theme {
-  margin-left: var(--ads-size-s);
-  padding-left: var(--ads-size-s);
-  border-left: var(--ads-border-width-hairline) solid var(--ads-color-body-300);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid #ccc;
+}
+
+[data-theme="dark"] .DemoBar-theme {
+  border-left-color: #505050;
+}
+
+.DemoBar-hint {
+  flex-basis: 100%;
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  line-height: 1.3;
+}
+
+[data-theme="dark"] .DemoBar-hint {
+  color: #999;
 }

@@ -1,6 +1,6 @@
 # Host on Vercel – no downloads, no terminal
 
-Everything is done in your **browser**. You don’t need to run any commands or install anything.
+**Easiest way to get a shareable link.** Everything is done in your **browser**—no commands, no installs.
 
 ---
 
@@ -31,7 +31,27 @@ Everything is done in your **browser**. You don’t need to run any commands or 
 3. Under **Import Git Repository**, select the repo you just created (e.g. **new-funds-transfer**).
 4. Leave the settings as they are (Build: `npm run build`, Output: `build`).
 5. Click **Deploy**.
-6. When it’s done, copy the URL (e.g. **https://new-funds-transfer.vercel.app**).
-   - Add **?view=mobile** or **?view=desktop** to share a specific layout.
+6. When it’s done, copy your live URL (e.g. **https://new-funds-transfer.vercel.app**).
+   - **Sharing:** Send that link to anyone—on a phone it will look like the mobile app, on a computer like the desktop version. No need to add anything to the link.
+   - Optional: add **?view=mobile** or **?view=desktop** to force one layout when sharing.
 
-Done. No Git, PowerShell, or other tools needed on your laptop.
+Done. No Git, PowerShell, or other tools needed.
+
+---
+
+## If you get 404 on your Vercel URL
+
+1. **Re-upload the latest files to GitHub**  
+   Make sure **`vercel.json`** is in the repo (with the root and catch-all rewrites). Drag and drop the updated project folder again and commit.
+
+2. **In Vercel dashboard**  
+   - Open your project → **Deployments** → click the latest deployment.  
+   - Check the **Build** step: did it finish with a green check, or with an error? If there’s an error, the build failed and the site will 404. Fix the error (e.g. add missing files) and redeploy.
+
+3. **Project settings**  
+   - **Settings** → **General** → **Root Directory** should be **empty** (project root).  
+   - **Settings** → **Build & Development**:  
+     - **Build Command:** `npm run build`  
+     - **Output Directory:** `build`  
+     - **Install Command:** `npm install`  
+   Save, then **Deployments** → **Redeploy**.

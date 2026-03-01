@@ -49,6 +49,7 @@ function DemoBar({ viewMode, resolvedView, onViewModeChange, theme, onThemeChang
           </button>
         </div>
       </div>
+      <p className="DemoBar-hint">For demos: try desktop or mobile view, or light/dark theme.</p>
     </header>
   );
 }
