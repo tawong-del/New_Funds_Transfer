@@ -1,0 +1,65 @@
+.DemoBar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ads-size-s);
+  padding: var(--ads-size-micro) var(--ads-size-s);
+  background-color: var(--ads-color-body-200);
+  border-bottom: var(--ads-border-width-hairline) solid var(--ads-color-body-300);
+  font-size: var(--ads-font-size-xs);
+}
+
+.DemoBar-label {
+  color: var(--ads-color-body-contrast-700);
+  font-weight: var(--ads-font-weight-medium);
+}
+
+.DemoBar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-size-xs);
+}
+
+.DemoBar-segment {
+  display: flex;
+  border-radius: var(--ads-border-radius-s);
+  overflow: hidden;
+  border: var(--ads-border-width-thin) solid var(--ads-color-body-300);
+}
+
+.DemoBar-segment button {
+  margin: 0;
+  padding: var(--ads-size-nano) var(--ads-size-xxs);
+  font-family: inherit;
+  font-size: var(--ads-font-size-xs);
+  font-weight: var(--ads-font-weight-medium);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--ads-color-body-contrast-700);
+}
+
+.DemoBar-segment button + button {
+  border-left: var(--ads-border-width-hairline) solid var(--ads-color-body-300);
+}
+
+.DemoBar-segment button[aria-pressed="true"] {
+  background-color: var(--ads-color-primary-400);
+  color: var(--ads-color-primary-contrast-400);
+}
+
+.DemoBar-segment button:hover:not([aria-pressed="true"]) {
+  background-color: var(--ads-color-body-300);
+}
+
+.DemoBar-segment button:focus-visible {
+  outline: var(--ads-border-width-thin) solid var(--ads-color-focus-indicator-400);
+  outline-offset: var(--ads-size-nano);
+}
+
+.DemoBar-theme {
+  margin-left: var(--ads-size-s);
+  padding-left: var(--ads-size-s);
+  border-left: var(--ads-border-width-hairline) solid var(--ads-color-body-300);
+}
