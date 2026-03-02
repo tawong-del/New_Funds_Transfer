@@ -112,7 +112,7 @@ function BalanceTable({ account }) {
 function TransferFundsPage() {
   const [step, setStep] = useState('amount');
   const [amount, setAmount] = useState('');
-  const [currency, setCurrency] = useState('CAD');
+  const [currency] = useState('CAD');
   const [fromAccountId, setFromAccountId] = useState(MOCK_ACCOUNTS[0].id);
   const [toAccountId, setToAccountId] = useState('');
   const [fromExpanded, setFromExpanded] = useState(true);
