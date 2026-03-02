@@ -1,4 +1,4 @@
-/* Design tokens – from Internal Funds CSS code.txt + Transfer funds on Qmobile reference */
+/* Design tokens – from Internal Funds CSS code.txt + Figma Transfer funds on Qmobile */
 
 :root {
   /* Backgrounds */
@@ -14,16 +14,25 @@
 
   /* Green (primary action) */
   --ift-green-dark: #227C20;
+  --ift-green-bright: #227C20;
   --ift-green-light: #EBF7EB;
   --ift-green-mid: #ADE2AF;
+  --ift-green-accent: #389B3C;
 
   /* Red (danger / cancel) */
   --ift-red-dark: #C91A33;
   --ift-red-light: #FEE9EC;
 
+  /* Info / warning banners */
+  --ift-info-bg: #E8F4FD;
+  --ift-info-icon: #1565C0;
+  --ift-warning-bg: #FFF8E1;
+  --ift-warning-icon: #9A7B2D;
+  --ift-danger-bg: #FEE9EC;
+  --ift-danger-icon: #C91A33;
+
   /* Typography */
   --ift-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --ift-font-section: 'Manrope', 'Open Sans', sans-serif;
 
   /* Radii */
   --ift-radius-card: 24px;
@@ -37,16 +46,24 @@
 
 /* Dark theme */
 [data-theme="dark"] {
-  --ift-bg-1: #1A1A1A;
-  --ift-bg-2: #252525;
-  --ift-bg-3: #2D2D2D;
-  --ift-grey-prime: #404040;
-  --ift-grey-body: #999999;
-  --ift-grey-secondary: #BBBBBB;
-  --ift-grey-darkest: #F0F0F0;
-  --ift-green-dark: #389B3C;
-  --ift-green-light: #1B2E1B;
-  --ift-green-mid: #2E4A2E;
+  --ift-bg-1: #1C1C1E;
+  --ift-bg-2: #000000;
+  --ift-bg-3: #2C2C2E;
+  --ift-grey-prime: #3A3A3C;
+  --ift-grey-body: #8E8E93;
+  --ift-grey-secondary: #AEAEB2;
+  --ift-grey-darkest: #F2F2F7;
+  --ift-green-dark: #227C20;
+  --ift-green-bright: #56BB5B;
+  --ift-green-light: #0D2B0D;
+  --ift-green-mid: #1A3D1A;
+  --ift-green-accent: #56BB5B;
   --ift-red-dark: #FF4B65;
-  --ift-red-light: #33141E;
+  --ift-red-light: #3D1520;
+  --ift-info-bg: #0D2744;
+  --ift-info-icon: #64B5F6;
+  --ift-warning-bg: #3D3215;
+  --ift-warning-icon: #FFD54F;
+  --ift-danger-bg: #3D1520;
+  --ift-danger-icon: #FF4B65;
 }

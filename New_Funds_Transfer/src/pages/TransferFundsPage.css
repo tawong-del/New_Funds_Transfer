@@ -1,281 +1,641 @@
-/* Internal Funds Transfer – matches Internal Funds CSS code.txt + Qmobile reference */
+/* Transfer Funds Page – pixel-match to Figma "Transfer funds on Qmobile" */
 
-.TransferFundsPage {
+/* ──── Page shell ──── */
+.TFP {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   max-width: 480px;
   margin: 0 auto;
-  padding: 32px 24px;
-  min-height: 100%;
-  box-sizing: border-box;
+  background: var(--ift-bg-2);
   font-family: var(--ift-font-body);
-}
-
-/* Header */
-.TransferFundsPage-header {
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.TransferFundsPage-header h1,
-.TransferFundsPage-title {
-  margin: 0 0 4px 0;
-  font-family: var(--ift-font-body);
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
   color: var(--ift-grey-darkest);
+  position: relative;
 }
 
-.TransferFundsPage-subtitle {
-  margin: 0;
-  font-family: var(--ift-font-body);
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--ift-grey-secondary);
-}
-
-.TransferFundsPage-badge {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 4px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ift-grey-darkest);
-  background: var(--ift-bg-3);
-  border-radius: var(--ift-radius-pill);
-  letter-spacing: 0.02em;
-}
-
-/* Balance cards – white card, 1px #CED6E2 border, 24px radius (from CSS code) */
-.TransferFundsPage-balances {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.TransferFundsPage-balance-card {
-  padding: 12px 16px;
-  gap: 4px;
-  background: var(--ift-bg-1);
-  border: 1px solid var(--ift-grey-prime);
-  border-radius: var(--ift-radius-card);
-  display: flex;
-  flex-direction: column;
-}
-
-.TransferFundsPage-balance-label {
-  display: block;
-  font-family: var(--ift-font-body);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-  color: var(--ift-grey-darkest);
-}
-
-.TransferFundsPage-balance-value {
-  font-family: var(--ift-font-body);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  color: var(--ift-grey-darkest);
-}
-
-/* Success message – green */
-.TransferFundsPage-success {
-  margin-bottom: 16px;
-  padding: 12px 16px;
-  background: var(--ift-green-light);
-  border: 1px solid var(--ift-green-mid);
-  border-radius: var(--ift-radius-card);
-}
-
-.TransferFundsPage-success-header {
+/* ──── Nav bar ──── */
+.TFP-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4px;
+  height: 56px;
+  padding: 0 16px;
+  flex-shrink: 0;
 }
 
-.TransferFundsPage-success-status {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  color: var(--ift-grey-darkest);
-}
-
-.TransferFundsPage-success-dismiss {
-  margin: 0;
-  padding: 4px;
-  min-width: var(--ift-touch-target);
-  min-height: var(--ift-touch-target);
-  font-size: 20px;
-  line-height: 1;
+.TFP-nav-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
   background: none;
   border: none;
-  color: var(--ift-grey-secondary);
   cursor: pointer;
-  border-radius: var(--ift-radius-small);
+  color: var(--ift-grey-darkest);
   -webkit-tap-highlight-color: transparent;
+  border-radius: var(--ift-radius-small);
 }
 
-.TransferFundsPage-success-dismiss:hover {
-  color: var(--ift-grey-darkest);
+.TFP-nav-btn:hover {
   background: var(--ift-bg-3);
 }
 
-.TransferFundsPage-success-copy {
-  margin: 0;
+.TFP-nav-title {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 22px;
   color: var(--ift-grey-darkest);
 }
 
-/* Form section */
-.TransferFundsPage-form-section {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+/* ──── Scrollable body ──── */
+.TFP-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 8px 100px;
+  -webkit-overflow-scrolling: touch;
 }
 
-.TransferFundsPage-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.TransferFundsPage-field {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* Labels: Open Sans 16px semi-bold (from "From account" in CSS code) */
-.TransferFundsPage-field label,
-.q-input-label {
-  font-family: var(--ift-font-body);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
+/* ──── Subtitle ──── */
+.TFP-subtitle {
+  margin: 0 0 4px 16px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
   color: var(--ift-grey-darkest);
 }
 
-/* Inputs: 1px #CED6E2 border, 12px radius, 8px 16px padding, 44px height (from CSS code) */
-.TransferFundsPage-field input,
-.q-input {
+/* ──── Cards ──── */
+.TFP-card {
+  background: var(--ift-bg-1);
+  border-radius: var(--ift-radius-card);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+/* ──── Amount input ──── */
+.TFP-amount-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--ift-grey-secondary);
+  margin-bottom: 4px;
+}
+
+.TFP-amount-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.TFP-amount-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: var(--ift-touch-target);
   padding: 8px 16px;
-  font-family: var(--ift-font-body);
+  background: var(--ift-bg-1);
+  border: 1px solid var(--ift-grey-prime);
+  border-radius: var(--ift-radius-input);
+  transition: border-color 0.15s;
+}
+
+.TFP-amount-input-wrap:focus-within {
+  border-color: var(--ift-green-dark);
+  box-shadow: 0 0 0 2px rgba(34, 124, 32, 0.15);
+}
+
+.TFP-amount-input-wrap--error {
+  border-color: var(--ift-red-dark);
+}
+
+.TFP-amount-input-wrap--error:focus-within {
+  border-color: var(--ift-red-dark);
+  box-shadow: 0 0 0 2px rgba(201, 26, 51, 0.15);
+}
+
+.TFP-amount-prefix {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  min-height: var(--ift-touch-target);
-  width: 100%;
-  box-sizing: border-box;
-  background: var(--ift-bg-1);
   color: var(--ift-grey-darkest);
-  border: 1px solid var(--ift-grey-prime);
-  border-radius: var(--ift-radius-input);
-  -webkit-appearance: none;
-  appearance: none;
+  margin-right: 2px;
+  flex-shrink: 0;
 }
 
-.TransferFundsPage-field input::placeholder,
-.q-input::placeholder {
+.TFP-amount-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
+  padding: 0;
+  min-width: 0;
+}
+
+.TFP-amount-input::placeholder {
   color: var(--ift-grey-body);
 }
 
-.TransferFundsPage-field input:focus,
-.q-input:focus {
-  outline: none;
-  border-color: var(--ift-green-dark);
-  box-shadow: 0 0 0 2px rgba(34, 124, 32, 0.25);
+/* ──── CAD chip ──── */
+.TFP-currency-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 8px 5px 12px;
+  background: var(--ift-bg-3);
+  border: none;
+  border-radius: var(--ift-radius-pill);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--ift-grey-darkest);
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.TransferFundsPage-field input.q-input--error,
-.q-input--error {
-  border-color: var(--ift-red-dark);
+.TFP-chip-chevron {
+  width: 16px;
+  height: 16px;
 }
 
-.TransferFundsPage-field input.q-input--error:focus,
-.q-input--error:focus {
-  border-color: var(--ift-red-dark);
-  box-shadow: 0 0 0 2px rgba(201, 26, 51, 0.2);
-}
-
-.TransferFundsPage-error {
+/* ──── Amount error ──── */
+.TFP-amount-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
   color: var(--ift-red-dark);
   margin-top: 4px;
+  margin-bottom: 4px;
 }
 
-/* Primary button: green #227C20, pill shape (100px radius), 44px height, white text
-   (from "Primary button" in CSS code) */
-.TransferFundsPage-submit {
-  margin-top: 8px;
+.TFP-amount-error svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* ──── Currency link ──── */
+.TFP-currency-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--ift-grey-secondary);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TFP-currency-link svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ──── Info / warning banners ──── */
+.TFP-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--ift-radius-card);
+  margin-bottom: 16px;
+}
+
+.TFP-banner--info {
+  background: var(--ift-info-bg);
+}
+
+.TFP-banner--warning {
+  background: var(--ift-warning-bg);
+}
+
+.TFP-banner--danger {
+  background: var(--ift-danger-bg);
+}
+
+.TFP-banner svg:first-child {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.TFP-banner-text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-darkest);
+}
+
+.TFP-banner-dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ift-grey-darkest);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TFP-banner-dismiss svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ──── Account balances card ──── */
+.TFP-balances-card {
+  padding: 16px;
+}
+
+.TFP-balances-heading {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
+  margin-bottom: 16px;
+}
+
+.TFP-account-section {
+  padding: 0;
+}
+
+.TFP-account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TFP-account-header-label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
+}
+
+.TFP-account-chevron {
+  width: 24px;
+  height: 24px;
+  color: var(--ift-grey-darkest);
+  transition: transform 0.2s;
+}
+
+.TFP-account-chevron--up {
+  transform: rotate(180deg);
+}
+
+.TFP-account-details {
+  padding-bottom: 8px;
+}
+
+.TFP-account-name-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TFP-account-detail-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
+}
+
+.TFP-account-detail-type {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-secondary);
+}
+
+.TFP-account-select-trigger {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ift-grey-secondary);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TFP-account-divider {
+  height: 1px;
+  background: var(--ift-bg-3);
+  margin: 8px 0;
+}
+
+/* ──── Balance table ──── */
+.TFP-balance-table {
+  margin-top: 12px;
+}
+
+.TFP-balance-combined {
+  display: grid;
+  grid-template-columns: auto auto 1fr 1fr;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.TFP-balance-combined-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-darkest);
+}
+
+/* Toggle (decorative) */
+.TFP-balance-combined-toggle {
+  display: inline-flex;
+}
+
+.TFP-toggle-track {
+  display: inline-flex;
+  align-items: center;
+  width: 36px;
+  height: 20px;
+  background: var(--ift-green-dark);
+  border-radius: 10px;
+  padding: 2px;
+  position: relative;
+}
+
+.TFP-toggle-thumb {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  margin-left: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.TFP-balance-col-header {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--ift-grey-secondary);
+  text-align: right;
+}
+
+.TFP-balance-row {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 2px 0;
+}
+
+.TFP-balance-row-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-secondary);
+}
+
+.TFP-balance-row-val {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-darkest);
+  text-align: right;
+}
+
+/* ──── Account selection (radio cards) ──── */
+.TFP-account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.TFP-radio-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background: var(--ift-bg-1);
+  border: 1px solid var(--ift-grey-prime);
+  border-radius: var(--ift-radius-card);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.15s;
+}
+
+.TFP-radio-card:hover {
+  border-color: var(--ift-grey-secondary);
+}
+
+.TFP-radio-card--selected {
+  border-color: var(--ift-green-dark);
+}
+
+.TFP-radio-card--error {
+  border-color: var(--ift-red-dark);
+}
+
+/* Radio circle */
+.TFP-radio-circle {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--ift-grey-prime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+
+.TFP-radio-circle--selected {
+  border-color: var(--ift-green-dark);
+  background: var(--ift-green-dark);
+}
+
+.TFP-radio-circle--error {
+  border-color: var(--ift-red-dark);
+}
+
+.TFP-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+.TFP-radio-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.TFP-radio-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
+}
+
+.TFP-radio-type {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-secondary);
+}
+
+.TFP-radio-balances {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.TFP-radio-bal {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-darkest);
+}
+
+/* Selection error */
+.TFP-select-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-left: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-red-dark);
+}
+
+.TFP-select-error svg {
+  flex-shrink: 0;
+}
+
+/* ──── Sticky footer / Next button ──── */
+.TFP-sticky-footer {
+  position: sticky;
+  bottom: 0;
+  padding: 16px 24px 24px;
+  background: var(--ift-bg-2);
+  z-index: 10;
+}
+
+.TFP-next-btn {
+  display: block;
+  width: 100%;
+  min-height: var(--ift-touch-target);
   padding: 10px 24px;
-  font-family: var(--ift-font-body);
+  font-family: inherit;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
   text-align: center;
-  color: var(--ift-bg-1);
+  color: #FFFFFF;
   background: var(--ift-green-dark);
   border: none;
   border-radius: var(--ift-radius-pill);
   cursor: pointer;
-  width: 100%;
-  min-height: var(--ift-touch-target);
   -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s;
 }
 
-.TransferFundsPage-submit:hover {
+.TFP-next-btn:hover {
   background: #1B6619;
 }
 
-.TransferFundsPage-submit:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(34, 124, 32, 0.4);
-}
-
-.TransferFundsPage-submit:active {
+.TFP-next-btn:active {
   background: #165214;
 }
 
-/* Desktop: slightly wider */
-.layout-desktop .TransferFundsPage {
+.TFP-next-btn:focus-visible {
+  outline: 3px solid rgba(34, 124, 32, 0.4);
+  outline-offset: 2px;
+}
+
+/* ──── Dark mode overrides ──── */
+[data-theme="dark"] .TFP-next-btn {
+  background: var(--ift-green-bright);
+  color: var(--ift-bg-2);
+}
+
+[data-theme="dark"] .TFP-next-btn:hover {
+  background: #4DAF52;
+}
+
+[data-theme="dark"] .TFP-next-btn:active {
+  background: #43A047;
+}
+
+[data-theme="dark"] .TFP-amount-input-wrap {
+  background: var(--ift-bg-1);
+}
+
+[data-theme="dark"] .TFP-toggle-track {
+  background: var(--ift-green-accent);
+}
+
+/* ──── Mobile safe areas ──── */
+.layout-mobile .TFP-body {
+  padding-left: max(8px, env(safe-area-inset-left));
+  padding-right: max(8px, env(safe-area-inset-right));
+}
+
+.layout-mobile .TFP-sticky-footer {
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+}
+
+/* ──── Desktop: wider ──── */
+.layout-desktop .TFP {
   max-width: 520px;
-  padding: 40px 32px;
-}
-
-.layout-desktop .TransferFundsPage-balance-card {
-  min-width: 200px;
-}
-
-.layout-desktop .TransferFundsPage-title {
-  font-size: 16px;
-}
-
-/* Mobile safe areas */
-.layout-mobile .TransferFundsPage {
-  max-width: 480px;
-  padding: 32px 24px;
-  padding-left: max(24px, env(safe-area-inset-left));
-  padding-right: max(24px, env(safe-area-inset-right));
-  padding-bottom: max(32px, env(safe-area-inset-bottom));
-}
-
-.layout-mobile .TransferFundsPage-balance-card {
-  min-width: 0;
-}
-
-@media (min-width: 360px) {
-  .layout-mobile .TransferFundsPage-balances {
-    flex-direction: column;
-  }
 }
