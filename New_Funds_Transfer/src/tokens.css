@@ -1,127 +1,52 @@
-/* AllSpark design tokens – light theme (default) */
+/* Design tokens – from Internal Funds CSS code.txt + Transfer funds on Qmobile reference */
+
 :root {
-  /* Body / surface */
-  --ads-color-body-100: #ffffff;
-  --ads-color-body-200: #f8f8fa;
-  --ads-color-body-300: #f2f2f8;
-  --ads-color-body-400: #ced6e2;
-  --ads-color-body-500: #78899f;
-  --ads-color-body-600: #5e6d83;
-  --ads-color-body-700: #262d33;
-  --ads-color-body-contrast-100: #262d33;
-  --ads-color-body-contrast-200: #262d33;
-  --ads-color-body-contrast-300: #262d33;
-  --ads-color-body-contrast-400: #262d33;
-  --ads-color-body-contrast-500: #ffffff;
-  --ads-color-body-contrast-600: #ffffff;
-  --ads-color-body-contrast-700: #ffffff;
+  /* Backgrounds */
+  --ift-bg-1: #FFFFFF;
+  --ift-bg-2: #F8F8FA;
+  --ift-bg-3: #F2F2F8;
 
-  /* Primary (green) */
-  --ads-color-primary-400: #389b3c;
-  --ads-color-primary-500: #227c20;
-  --ads-color-primary-600: #217024;
-  --ads-color-primary-200: #addeaf;
-  --ads-color-primary-contrast-400: #ffffff;
-  --ads-color-primary-contrast-200: #262d33;
+  /* Grey scale */
+  --ift-grey-prime: #CED6E2;
+  --ift-grey-body: #78899F;
+  --ift-grey-secondary: #5E6D83;
+  --ift-grey-darkest: #262D33;
 
-  /* Success (green) */
-  --ads-color-success-100: #ebf7eb;
-  --ads-color-success-300: #5dbe62;
+  /* Green (primary action) */
+  --ift-green-dark: #227C20;
+  --ift-green-light: #EBF7EB;
+  --ift-green-mid: #ADE2AF;
 
-  /* Danger (red) */
-  --ads-color-danger-400: #d33e54;
-  --ads-color-danger-100: #fee9ec;
-  --ads-color-danger-contrast-400: #ffffff;
-  --ads-color-danger-contrast-100: #262d33;
-
-  /* Secondary */
-  --ads-color-secondary-400: #ced6e2;
-  --ads-color-secondary-500: #78899f;
-  --ads-color-secondary-600: #5e6d83;
-  --ads-color-secondary-contrast-400: #262d33;
-
-  /* Focus */
-  --ads-color-focus-indicator-400: #00428f;
+  /* Red (danger / cancel) */
+  --ift-red-dark: #C91A33;
+  --ift-red-light: #FEE9EC;
 
   /* Typography */
-  --ads-font-family-body: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --ads-font-family-heading: "Roboto Slab", Georgia, serif;
-  --ads-font-size-xxs: 12px;
-  --ads-font-size-xs: 14px;
-  --ads-font-size-s: 16px;
-  --ads-font-size-m: 18px;
-  --ads-font-size-l: 22px;
-  --ads-font-weight-regular: 400;
-  --ads-font-weight-medium: 500;
-  --ads-font-weight-semi-bold: 600;
-  --ads-font-weight-bold: 700;
-  --ads-line-height-xxs: 18px;
-  --ads-line-height-xs: 22px;
-  --ads-line-height-s: 24px;
+  --ift-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ift-font-section: 'Manrope', 'Open Sans', sans-serif;
 
-  /* Size scale (8px grid) */
-  --ads-size-nano: 4px;
-  --ads-size-micro: 8px;
-  --ads-size-xxxs: 12px;
-  --ads-size-xxs: 16px;
-  --ads-size-xs: 20px;
-  --ads-size-s: 24px;
-  --ads-size-m: 32px;
-  --ads-size-l: 40px;
-  --ads-size-xl: 44px;
-  --ads-size-xxl: 48px;
+  /* Radii */
+  --ift-radius-card: 24px;
+  --ift-radius-input: 12px;
+  --ift-radius-small: 6px;
+  --ift-radius-pill: 100px;
 
-  /* Border */
-  --ads-border-radius-s: 6px;
-  --ads-border-radius-m: 12px;
-  --ads-border-radius-l: 24px;
-  --ads-border-width-hairline: 1px;
-  --ads-border-width-thin: 2px;
-
-  /* Shadow (raised) */
-  --ads-elevation-raised-shadow-position-y: 1px;
-  --ads-elevation-raised-shadow-blur: 1px;
-  --ads-elevation-raised-shadow-spread: 0;
-  --ads-elevation-raised-shadow-color: rgba(0, 0, 0, 0.25);
+  /* Sizing */
+  --ift-touch-target: 44px;
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --ads-color-body-100: #111317;
-  --ads-color-body-200: #07090a;
-  --ads-color-body-300: #262d33;
-  --ads-color-body-400: #313a45;
-  --ads-color-body-500: #6a7687;
-  --ads-color-body-600: #8e97ad;
-  --ads-color-body-700: #f2f2f8;
-  --ads-color-body-contrast-100: #f2f2f8;
-  --ads-color-body-contrast-200: #f2f2f8;
-  --ads-color-body-contrast-300: #f2f2f8;
-  --ads-color-body-contrast-400: #f2f2f8;
-  --ads-color-body-contrast-500: #111317;
-  --ads-color-body-contrast-600: #111317;
-  --ads-color-body-contrast-700: #111317;
-
-  --ads-color-primary-400: #389b3c;
-  --ads-color-primary-500: #6bc895;
-  --ads-color-primary-600: #7bca7e;
-  --ads-color-primary-200: #144416;
-  --ads-color-primary-contrast-400: #111317;
-  --ads-color-primary-contrast-200: #f2f2f8;
-
-  /* Success (green) dark */
-  --ads-color-success-100: #0a210b;
-  --ads-color-success-300: #227c20;
-
-  --ads-color-danger-400: #ff4b65;
-  --ads-color-danger-100: #330e14;
-  --ads-color-danger-contrast-400: #111317;
-  --ads-color-danger-contrast-100: #f2f2f8;
-
-  --ads-color-secondary-400: #313a45;
-  --ads-color-secondary-500: #6a7687;
-  --ads-color-secondary-600: #8e97ad;
-  --ads-color-secondary-contrast-400: #f2f2f8;
-
-  --ads-elevation-raised-shadow-color: rgba(0, 0, 0, 0.4);
+  --ift-bg-1: #1A1A1A;
+  --ift-bg-2: #252525;
+  --ift-bg-3: #2D2D2D;
+  --ift-grey-prime: #404040;
+  --ift-grey-body: #999999;
+  --ift-grey-secondary: #BBBBBB;
+  --ift-grey-darkest: #F0F0F0;
+  --ift-green-dark: #389B3C;
+  --ift-green-light: #1B2E1B;
+  --ift-green-mid: #2E4A2E;
+  --ift-red-dark: #FF4B65;
+  --ift-red-light: #33141E;
 }

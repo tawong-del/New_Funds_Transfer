@@ -1,286 +1,256 @@
-/* Internal Funds Transfer – mobile-first, matches Qmobile (QOfficetrial) design */
+/* Internal Funds Transfer – matches Internal Funds CSS code.txt + Qmobile reference */
 
 .TransferFundsPage {
   max-width: 480px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 32px 24px;
   min-height: 100%;
   box-sizing: border-box;
+  font-family: var(--ift-font-body);
 }
 
+/* Header */
 .TransferFundsPage-header {
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
   text-align: center;
 }
 
 .TransferFundsPage-header h1,
 .TransferFundsPage-title {
-  margin: 0 0 0.25rem 0;
-  font-size: 1.75rem;
+  margin: 0 0 4px 0;
+  font-family: var(--ift-font-body);
   font-weight: 600;
-  color: #1a1a1a;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
 }
 
 .TransferFundsPage-subtitle {
   margin: 0;
-  font-size: 0.95rem;
-  color: #666;
+  font-family: var(--ift-font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ift-grey-secondary);
 }
 
 .TransferFundsPage-badge {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: #666;
-  background: #eee;
-  border-radius: 4px;
+  margin-top: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ift-grey-darkest);
+  background: var(--ift-bg-3);
+  border-radius: var(--ift-radius-pill);
   letter-spacing: 0.02em;
 }
 
-[data-theme="dark"] .TransferFundsPage-badge {
-  color: #999;
-  background: #333;
-}
-
-/* Balance cards – match Qmobile */
+/* Balance cards – white card, 1px #CED6E2 border, 24px radius (from CSS code) */
 .TransferFundsPage-balances {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .TransferFundsPage-balance-card {
-  flex: 1;
-  min-width: 140px;
-  padding: 1rem 1.25rem;
-  background: #f5f5f5;
-  border-radius: 8px;
-  border: 1px solid #eee;
+  padding: 12px 16px;
+  gap: 4px;
+  background: var(--ift-bg-1);
+  border: 1px solid var(--ift-grey-prime);
+  border-radius: var(--ift-radius-card);
+  display: flex;
+  flex-direction: column;
 }
 
 .TransferFundsPage-balance-label {
   display: block;
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 0.25rem;
+  font-family: var(--ift-font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--ift-grey-darkest);
 }
 
 .TransferFundsPage-balance-value {
-  font-size: 1.5rem;
+  font-family: var(--ift-font-body);
+  font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
 }
 
-/* Success message – after transfer */
+/* Success message – green */
 .TransferFundsPage-success {
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  background: #e8f5e9;
-  border: 1px solid #a5d6a7;
-  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: var(--ift-green-light);
+  border: 1px solid var(--ift-green-mid);
+  border-radius: var(--ift-radius-card);
 }
 
 .TransferFundsPage-success-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.35rem;
+  margin-bottom: 4px;
 }
 
 .TransferFundsPage-success-status {
-  font-size: 0.95rem;
+  font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
 }
 
 .TransferFundsPage-success-dismiss {
   margin: 0;
-  padding: 0.25rem;
-  min-width: 44px;
-  min-height: 44px;
-  font-size: 1.25rem;
+  padding: 4px;
+  min-width: var(--ift-touch-target);
+  min-height: var(--ift-touch-target);
+  font-size: 20px;
   line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: none;
-  color: #666;
+  color: var(--ift-grey-secondary);
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: var(--ift-radius-small);
   -webkit-tap-highlight-color: transparent;
 }
 
 .TransferFundsPage-success-dismiss:hover {
-  color: #1a1a1a;
-  background: rgba(0, 0, 0, 0.06);
+  color: var(--ift-grey-darkest);
+  background: var(--ift-bg-3);
 }
 
 .TransferFundsPage-success-copy {
   margin: 0;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ift-grey-darkest);
 }
 
-/* Form section – match Qmobile */
+/* Form section */
 .TransferFundsPage-form-section {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .TransferFundsPage-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .TransferFundsPage-field {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 4px;
 }
 
+/* Labels: Open Sans 16px semi-bold (from "From account" in CSS code) */
 .TransferFundsPage-field label,
 .q-input-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #333;
+  font-family: var(--ift-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--ift-grey-darkest);
 }
 
+/* Inputs: 1px #CED6E2 border, 12px radius, 8px 16px padding, 44px height (from CSS code) */
 .TransferFundsPage-field input,
 .q-input {
-  padding: 0.6rem 0.75rem;
-  font-size: 1rem; /* 16px avoids iOS zoom on focus */
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--ift-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  min-height: var(--ift-touch-target);
   width: 100%;
   box-sizing: border-box;
-  background: #fff;
-  color: #1a1a1a;
-  min-height: 44px;
+  background: var(--ift-bg-1);
+  color: var(--ift-grey-darkest);
+  border: 1px solid var(--ift-grey-prime);
+  border-radius: var(--ift-radius-input);
   -webkit-appearance: none;
   appearance: none;
 }
 
 .TransferFundsPage-field input::placeholder,
 .q-input::placeholder {
-  color: #999;
+  color: var(--ift-grey-body);
 }
 
 .TransferFundsPage-field input:focus,
 .q-input:focus {
   outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+  border-color: var(--ift-green-dark);
+  box-shadow: 0 0 0 2px rgba(34, 124, 32, 0.25);
 }
 
 .TransferFundsPage-field input.q-input--error,
 .q-input--error {
-  border-color: #c62828;
+  border-color: var(--ift-red-dark);
 }
 
 .TransferFundsPage-field input.q-input--error:focus,
 .q-input--error:focus {
-  border-color: #c62828;
-  box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.2);
+  border-color: var(--ift-red-dark);
+  box-shadow: 0 0 0 2px rgba(201, 26, 51, 0.2);
 }
 
 .TransferFundsPage-error {
-  font-size: 0.8rem;
-  color: #c62828;
-  margin-top: 0.15rem;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--ift-red-dark);
+  margin-top: 4px;
 }
 
+/* Primary button: green #227C20, pill shape (100px radius), 44px height, white text
+   (from "Primary button" in CSS code) */
 .TransferFundsPage-submit {
-  margin-top: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
+  margin-top: 8px;
+  padding: 10px 24px;
+  font-family: var(--ift-font-body);
+  font-size: 16px;
   font-weight: 600;
-  color: #fff;
-  background: #0066cc;
+  line-height: 24px;
+  text-align: center;
+  color: var(--ift-bg-1);
+  background: var(--ift-green-dark);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--ift-radius-pill);
   cursor: pointer;
   width: 100%;
-  min-height: 44px;
+  min-height: var(--ift-touch-target);
   -webkit-tap-highlight-color: transparent;
 }
 
 .TransferFundsPage-submit:hover {
-  background: #0052a3;
+  background: #1B6619;
 }
 
 .TransferFundsPage-submit:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.4);
+  box-shadow: 0 0 0 3px rgba(34, 124, 32, 0.4);
 }
 
 .TransferFundsPage-submit:active {
-  background: #004080;
+  background: #165214;
 }
 
-/* Dark theme – mobile-style dark */
-[data-theme="dark"] .TransferFundsPage-header h1,
-[data-theme="dark"] .TransferFundsPage-title,
-[data-theme="dark"] .TransferFundsPage-balance-value {
-  color: #f0f0f0;
-}
-
-[data-theme="dark"] .TransferFundsPage-subtitle,
-[data-theme="dark"] .TransferFundsPage-balance-label {
-  color: #aaa;
-}
-
-[data-theme="dark"] .TransferFundsPage-balance-card {
-  background: #2a2a2a;
-  border-color: #404040;
-}
-
-[data-theme="dark"] .TransferFundsPage-form-section {
-  background: #252525;
-  border-color: #404040;
-}
-
-[data-theme="dark"] .TransferFundsPage-field label,
-[data-theme="dark"] .q-input-label {
-  color: #e0e0e0;
-}
-
-[data-theme="dark"] .q-input,
-[data-theme="dark"] .TransferFundsPage-field input {
-  background: #1e1e1e;
-  border-color: #505050;
-  color: #f0f0f0;
-}
-
-[data-theme="dark"] .TransferFundsPage-success {
-  background: #1b2e1b;
-  border-color: #2e4a2e;
-}
-
-[data-theme="dark"] .TransferFundsPage-success-status,
-[data-theme="dark"] .TransferFundsPage-success-copy {
-  color: #c8e6c9;
-}
-
-[data-theme="dark"] .TransferFundsPage-submit {
-  background: #0088ff;
-}
-
-[data-theme="dark"] .TransferFundsPage-submit:hover {
-  background: #0070dd;
-}
-
-/* Desktop: same design, slightly wider container */
+/* Desktop: slightly wider */
 .layout-desktop .TransferFundsPage {
   max-width: 520px;
-  padding: 2.5rem 2rem;
+  padding: 40px 32px;
 }
 
 .layout-desktop .TransferFundsPage-balance-card {
@@ -288,27 +258,24 @@
 }
 
 .layout-desktop .TransferFundsPage-title {
-  font-size: 1.75rem;
+  font-size: 16px;
 }
 
+/* Mobile safe areas */
 .layout-mobile .TransferFundsPage {
   max-width: 480px;
-  padding: 2rem 1.5rem;
-  padding-left: max(1.5rem, env(safe-area-inset-left));
-  padding-right: max(1.5rem, env(safe-area-inset-right));
-  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  padding: 32px 24px;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
 }
 
 .layout-mobile .TransferFundsPage-balance-card {
   min-width: 0;
-  flex: 1 1 100%;
 }
 
 @media (min-width: 360px) {
   .layout-mobile .TransferFundsPage-balances {
-    flex-direction: row;
-  }
-  .layout-mobile .TransferFundsPage-balance-card {
-    flex: 1 1 0;
+    flex-direction: column;
   }
 }
