@@ -1,0 +1,8 @@
+{
+  "datepicker": {
+    "actions": {
+      "done": "Custom Ok",
+      "clear": "Custom Clear"
+    }
+  }
+}

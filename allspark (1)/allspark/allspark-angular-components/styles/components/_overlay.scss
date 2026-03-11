@@ -1,0 +1,17 @@
+.cdk-overlay-pane.q-overlay-panel {
+  border: var(
+    --awds-overlay-panel-border,
+    var(--ads-border-width-hairline) solid var(--ads-color-body-400)
+  );
+  box-shadow: var(--awds-overlay-panel-box-shadow, 0 4px 8px rgba(0, 0, 0, 0.08));
+  border-radius: var(--awds-overlay-panel-border-radius, var(--ads-border-radius-m));
+  background: var(--awds-overlay-panel-background, var(--ads-color-body-100));
+  max-width: var(--awds-overlay-panel-max-width, 100%);
+  max-height: var(--awds-overlay-panel-max-height, 100%);
+  overflow: auto;
+}
+
+.cdk-overlay-backdrop.q-overlay-backdrop {
+  background: var(--awds-overlay-backdrop-background, var(--ads-color-overlay-400));
+  backdrop-filter: var(--awds-overlay-backdrop-filter, none);
+}

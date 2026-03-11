@@ -1,0 +1,137 @@
+@use '../a11y';
+@use '../typography';
+
+.q-textarea {
+  @include typography.font-definition(typography.$body-m, 'textarea-container');
+
+  background: var(--awds-textarea-container-background, var(--ads-color-body-100));
+  border-radius: var(--awds-textarea-container-border-radius, var(--ads-border-radius-s));
+  border: var(--awds-textarea-container-border, none);
+  padding: var(--awds-textarea-container-padding, var(--ads-size-micro) var(--ads-size-xxs));
+  outline: var(--awds-textarea-container-outline, none);
+  // TODO: This box-shadow represent a border, thats why it uses --ads-border-width token. Need to refactor?
+  box-shadow: var(
+    --awds-textarea-container-box-shadow,
+    inset 0 0 0 var(--ads-border-width-hairline) var(--ads-color-body-500)
+  );
+  color: var(--awds-textarea-container-color, var(--ads-color-body-contrast-100));
+  resize: var(--awds-textarea-container-resize, none);
+  height: var(--awds-textarea-container-height, auto);
+
+  &::placeholder {
+    color: var(--awds-textarea-placeholder-color, var(--ads-color-body-600));
+    font-style: var(--awds-textarea-placeholder-font-style, italic);
+  }
+
+  &:hover {
+    border: var(--awds-textarea-hover-container-border, none);
+    background: var(--awds-textarea-hover-container-background, var(--ads-color-body-100));
+    // TODO: This box-shadow represent a border, thats why it uses --ads-border-width token. Need to refactor?
+    box-shadow: var(
+      --awds-textarea-hover-container-box-shadow,
+      inset 0 0 0 var(--ads-border-width-hairline) var(--ads-color-body-600)
+    );
+  }
+
+  &:not([disabled]) {
+    &.cdk-keyboard-focused {
+      @include a11y.q-focus-indicator();
+    }
+
+    &:not(.cdk-keyboard-focused) {
+      &:focus {
+        border: var(--awds-textarea-focus-container-border, none);
+        background: var(--awds-textarea-focus-container-background, var(--ads-color-body-100));
+        box-shadow: var(
+          --awds-textarea-focus-container-box-shadow,
+          inset 0 0 0 2px var(--ads-color-primary-400)
+        );
+        transition: box-shadow 10ms;
+      }
+    }
+  }
+
+  &.q-textarea-invalid {
+    border: var(--awds-textarea-invalid-container-border, none);
+    background: var(--awds-textarea-invalid-container-background, var(--ads-color-body-100));
+    // TODO: This box-shadow represent a border, thats why it uses --ads-border-width token. Need to refactor?
+    box-shadow: var(
+      --awds-textarea-invalid-container-box-shadow,
+      inset 0 0 0 var(--ads-border-width-hairline) var(--ads-color-danger-400)
+    );
+    color: var(--awds-textarea-invalid-container-color, var(--ads-color-body-contrast-100));
+
+    &:hover {
+      border: var(--awds-textarea-hover-invalid-container-border, none);
+      background: var(
+        --awds-textarea-hover-invalid-container-background,
+        var(--ads-color-body-100)
+      );
+    }
+
+    &:not(.cdk-keyboard-focused) {
+      &:focus {
+        color: var(
+          --awds-textarea-focus-invalid-container-color,
+          var(--ads-color-body-contrast-100)
+        );
+        border: var(--awds-textarea-focus-invalid-container-border, none);
+        background: var(
+          --awds-textarea-focus-invalid-container-background,
+          var(--ads-color-body-100)
+        );
+        box-shadow: var(
+          --awds-textarea-focus-invalid-container-box-shadow,
+          inset 0 0 0 2px var(--ads-color-danger-400)
+        );
+      }
+    }
+  }
+
+  &[disabled] {
+    color: var(--awds-textarea-disabled-container-color, var(--ads-color-body-400));
+    box-shadow: var(
+      --awds-textarea-disabled-container-box-shadow,
+      inset 0 0 0 var(--ads-border-width-hairline) var(--ads-color-body-400)
+    );
+    background: var(--awds-textarea-disabled-container-background, var(--ads-color-body-200));
+    border: var(--awds-textarea-disabled-container-border, none);
+
+    &::placeholder {
+      color: var(--awds-textarea-disabled-placeholder-color, var(--ads-color-body-400));
+    }
+  }
+
+  &[readonly] {
+    // TODO: This box-shadow represent a border, thats why it uses --ads-border-width token. Need to refactor?
+    box-shadow: var(
+      --awds-textarea-readonly-container-box-shadow,
+      inset 0 0 0 var(--ads-border-width-hairline) var(--ads-color-body-400)
+    );
+    background: var(--awds-textarea-readonly-container-background, var(--ads-color-body-200));
+    border: var(--awds-textarea-readonly-container-border, none);
+    color: var(--awds-textarea-readonly-container-color, var(--ads-color-body-contrast-100));
+
+    &::placeholder {
+      color: var(--awds-textarea-readonly-placeholder-color, var(--ads-color-body-400));
+    }
+  }
+}
+
+.q-textarea-container {
+  display: inline-flex;
+  position: relative;
+
+  .q-textarea-counter {
+    @include typography.font-definition(typography.$note, 'textarea-counter');
+
+    position: absolute;
+    right: var(--awds-textarea-counter-right, 0);
+    bottom: var(--awds-textarea-counter-bottom, -22px);
+    color: var(--awds-textarea-counter-color, var(--ads-color-body-600));
+
+    &-hidden {
+      display: none;
+    }
+  }
+}

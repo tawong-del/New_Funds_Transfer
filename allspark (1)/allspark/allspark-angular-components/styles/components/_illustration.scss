@@ -1,0 +1,29 @@
+.illustration {
+  &-color-green {
+    fill: var(--ads-color-primary-400);
+  }
+
+  &-color-red {
+    fill: var(--ads-color-danger-400);
+  }
+
+  &-color-grey {
+    fill: var(--ads-color-body-500);
+  }
+
+  &-color-shade {
+    fill: var(--ads-color-primary-200);
+  }
+
+  &-color-bg {
+    fill: var(--ads-color-body-100);
+  }
+
+  &-stroke-color-grey {
+    stroke: var(--ads-color-body-500);
+  }
+
+  &-stroke-color-green {
+    stroke: var(--ads-color-primary-400);
+  }
+}

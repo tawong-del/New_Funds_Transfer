@@ -1,0 +1,926 @@
+/* Transfer Funds Page – matches Transfer Positions web screenshots */
+
+/* ──── Page container ──── */
+.TF {
+  font-family: var(--ads-font-body);
+  color: var(--ads-color-body-700);
+}
+
+/* ──── Breadcrumb ──── */
+.TF-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ads-space-nano);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-primary-400);
+  text-decoration: none;
+  margin-bottom: var(--ads-space-xxs);
+}
+
+.TF-breadcrumb:hover {
+  text-decoration: underline;
+}
+
+.TF-breadcrumb svg {
+  flex-shrink: 0;
+  color: var(--ads-color-primary-400);
+}
+
+/* ──── Page title ──── */
+.TF-page-title {
+  margin: 0 0 var(--ads-space-micro);
+  font-family: var(--ads-font-body);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ads-color-body-700);
+}
+
+/* ──── Page description ──── */
+.TF-page-desc {
+  margin: 0 0 var(--ads-space-m);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-700);
+  max-width: 600px;
+}
+
+/* ──── Links ──── */
+.TF-link {
+  color: var(--ads-color-primary-400);
+  text-decoration: underline;
+}
+
+.TF-link:hover {
+  color: var(--ads-color-primary-500);
+}
+
+/* ──── Two-column grid ──── */
+.TF-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ads-space-m);
+}
+
+@media (min-width: 768px) {
+  .TF-grid {
+    grid-template-columns: minmax(0, 540px) 500px;
+    align-items: start;
+  }
+}
+
+/* ──── Form fields ──── */
+.TF-field {
+  margin-bottom: var(--ads-space-xxs);
+  position: relative;
+}
+
+.TF-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-600);
+  margin-bottom: var(--ads-space-nano);
+}
+
+/* ──── Select / dropdown trigger (bordered, per screenshots) ──── */
+.TF-select-wrap {
+  position: relative;
+}
+
+.TF-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px var(--ads-space-xxxs);
+  background: var(--ads-color-body-100);
+  border: 1px solid var(--ads-color-body-400);
+  border-radius: var(--ads-radius-s);
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s;
+}
+
+.TF-select:hover {
+  border-color: var(--ads-color-body-500);
+}
+
+.TF-select:focus-visible {
+  outline: 2px solid var(--ads-color-focus-400);
+  outline-offset: 2px;
+}
+
+.TF-select--error {
+  border-color: var(--ads-color-danger-400);
+}
+
+.TF-select-value {
+  font-weight: 400;
+  color: var(--ads-color-body-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.TF-select-placeholder {
+  font-weight: 400;
+  color: var(--ads-color-body-500);
+}
+
+.TF-select-chevron {
+  flex-shrink: 0;
+  color: var(--ads-color-body-600);
+  transition: transform 0.2s;
+}
+
+.TF-select-chevron--up {
+  transform: rotate(180deg);
+}
+
+/* ──── Dropdown panel ──── */
+.TF-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 20;
+  background: var(--ads-color-body-100);
+  border: 1px solid var(--ads-color-body-400);
+  border-radius: var(--ads-radius-s);
+  box-shadow: var(--ads-shadow-elevated);
+  padding: var(--ads-space-nano);
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.TF-dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-space-xxxs);
+  width: 100%;
+  padding: var(--ads-space-micro) var(--ads-space-xxxs);
+  background: none;
+  border: none;
+  border-radius: var(--ads-radius-s);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.12s;
+}
+
+.TF-dropdown-option:hover {
+  background: var(--ads-color-body-200);
+}
+
+.TF-dropdown-option--selected {
+  background: var(--ads-color-primary-100);
+}
+
+.TF-dropdown-option--selected:hover {
+  background: var(--ads-color-primary-100);
+}
+
+.TF-dropdown-option--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.TF-dropdown-option-radio {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--ads-color-body-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.TF-dropdown-option--selected .TF-dropdown-option-radio {
+  border-color: var(--ads-color-primary-400);
+  background: var(--ads-color-primary-400);
+}
+
+.TF-dropdown-option-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.TF-dropdown-option-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.TF-dropdown-option-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-700);
+}
+
+.TF-dropdown-option-type {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--ads-color-body-600);
+}
+
+.TF-dropdown-option-bals {
+  flex-shrink: 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.TF-dropdown-option-bals span {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--ads-color-body-600);
+}
+
+.TF-dropdown-banner {
+  padding: var(--ads-space-nano) var(--ads-space-micro);
+}
+
+/* ──── Field error ──── */
+.TF-field-error {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-space-nano);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-danger-400);
+  margin-top: var(--ads-space-nano);
+}
+
+.TF-field-error svg {
+  flex-shrink: 0;
+}
+
+/* ──── Field banner (below selector) ──── */
+.TF-field-banner {
+  margin-top: var(--ads-space-micro);
+}
+
+/* ──── Banners ──── */
+.TF-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ads-space-micro);
+  padding: var(--ads-space-xxxs) var(--ads-space-xxs);
+  border-radius: var(--ads-radius-s);
+  margin-bottom: var(--ads-space-micro);
+}
+
+.TF-banner:last-child {
+  margin-bottom: 0;
+}
+
+.TF-banner--info {
+  background: var(--ads-color-info-100);
+}
+
+.TF-banner--info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ads-color-info-400);
+}
+
+.TF-banner--warning {
+  background: var(--ads-color-caution-100);
+}
+
+.TF-banner--warning svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ads-color-caution-400);
+}
+
+.TF-banner--danger {
+  background: var(--ads-color-danger-100);
+}
+
+.TF-banner--danger svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ads-color-danger-400);
+}
+
+.TF-banner--success {
+  background: var(--ads-color-primary-100);
+}
+
+.TF-banner--success svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ads-color-primary-500);
+}
+
+.TF-banner-text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-700);
+}
+
+.TF-banner-dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--ads-radius-s);
+  cursor: pointer;
+  color: var(--ads-color-body-600);
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.TF-banner-dismiss:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ──── Amount input ──── */
+.TF-amount-row {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-space-micro);
+}
+
+.TF-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px var(--ads-space-xxxs);
+  background: var(--ads-color-body-100);
+  border: 1px solid var(--ads-color-body-400);
+  border-radius: var(--ads-radius-s);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.TF-input-wrap:hover {
+  border-color: var(--ads-color-body-500);
+}
+
+.TF-input-wrap:focus-within {
+  border-color: var(--ads-color-primary-400);
+  box-shadow: inset 0 0 0 1px var(--ads-color-primary-400);
+}
+
+.TF-input-wrap--error {
+  border-color: var(--ads-color-danger-400);
+}
+
+.TF-input-wrap--error:focus-within {
+  border-color: var(--ads-color-danger-400);
+  box-shadow: inset 0 0 0 1px var(--ads-color-danger-400);
+}
+
+.TF-input-prefix {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ads-color-body-600);
+  margin-right: var(--ads-space-nano);
+  flex-shrink: 0;
+}
+
+.TF-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ads-color-body-700);
+  padding: 0;
+  min-width: 0;
+}
+
+.TF-input::placeholder {
+  color: var(--ads-color-body-500);
+}
+
+/* ──── Currency chip ──── */
+.TF-currency-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px 6px 14px;
+  background: var(--ads-color-body-200);
+  border: 1px solid var(--ads-color-body-400);
+  border-radius: var(--ads-radius-s);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--ads-color-body-700);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.TF-currency-chip:hover {
+  background: var(--ads-color-body-300);
+}
+
+.TF-chip-chevron {
+  width: 16px;
+  height: 16px;
+}
+
+/* ──── Amount banners ──── */
+.TF-amount-banners {
+  margin-bottom: var(--ads-space-xxs);
+}
+
+/* ──── Swap button ──── */
+.TF-swap-row {
+  display: flex;
+  justify-content: center;
+  padding: var(--ads-space-nano) 0;
+}
+
+.TF-swap-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--ads-color-body-200);
+  border: 1px solid var(--ads-color-body-400);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--ads-color-body-600);
+  transition: background 0.15s, color 0.15s;
+}
+
+.TF-swap-btn:hover:not(:disabled) {
+  background: var(--ads-color-body-300);
+  color: var(--ads-color-body-700);
+}
+
+.TF-swap-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.TF-swap-btn:focus-visible {
+  outline: 2px solid var(--ads-color-focus-400);
+  outline-offset: 2px;
+}
+
+/* ──── Primary button (green, rounded like screenshots) ──── */
+.TF-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px var(--ads-space-m);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  border: none;
+  border-radius: var(--ads-radius-pill);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.TF-btn--primary {
+  background: var(--ads-color-primary-400);
+  color: #FFFFFF;
+}
+
+.TF-btn--primary:hover {
+  background: var(--ads-color-primary-500);
+}
+
+.TF-btn--primary:active {
+  background: var(--ads-color-primary-600);
+}
+
+.TF-btn--primary:focus-visible {
+  outline: 2px solid var(--ads-color-focus-400);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] .TF-btn--primary {
+  background: var(--ads-color-primary-400);
+  color: var(--ads-color-body-200);
+}
+
+[data-theme="dark"] .TF-btn--primary:hover {
+  background: var(--ads-color-primary-300);
+}
+
+/* ──── Disclosure link ──── */
+.TF-disclosure-link {
+  display: block;
+  margin-top: var(--ads-space-xxs);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-primary-400);
+  text-decoration: none;
+}
+
+.TF-disclosure-link:hover {
+  text-decoration: underline;
+}
+
+/* ──── Balance table ──── */
+.TF-balance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--ads-space-micro);
+  font-size: 14px;
+}
+
+.TF-balance-table th {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--ads-color-body-600);
+  text-align: right;
+  padding: 4px 0;
+}
+
+.TF-balance-table th:first-child {
+  text-align: left;
+}
+
+.TF-balance-table td {
+  padding: 4px 0;
+  color: var(--ads-color-body-700);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.TF-balance-table td:first-child {
+  text-align: left;
+  color: var(--ads-color-body-600);
+}
+
+/* ──── Right sidebar ──── */
+.TF-sidebar {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+
+.TF-sidebar-card {
+  background: var(--ads-color-body-200);
+  border-radius: var(--ads-radius-s);
+  padding: var(--ads-space-xxs);
+  margin-bottom: var(--ads-space-xxxs);
+}
+
+.TF-sidebar-card-title {
+  margin: 0 0 var(--ads-space-nano);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--ads-color-body-700);
+}
+
+.TF-sidebar-card-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-600);
+}
+
+.TF-help-btn {
+  position: fixed;
+  bottom: var(--ads-space-s);
+  right: var(--ads-space-s);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: var(--ads-color-body-100);
+  border: 1px solid var(--ads-color-body-400);
+  border-radius: 50%;
+  box-shadow: var(--ads-shadow-elevated);
+  cursor: pointer;
+  color: var(--ads-color-body-600);
+  transition: background 0.15s, color 0.15s;
+}
+
+.TF-help-btn:hover {
+  background: var(--ads-color-body-200);
+  color: var(--ads-color-body-700);
+}
+
+/* ──── Step screens (confirm, success) ──── */
+.TF-step-screen {
+  max-width: 540px;
+}
+
+.TF-step-header {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-space-micro);
+  margin-bottom: var(--ads-space-xxs);
+}
+
+.TF-step-back,
+.TF-step-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--ads-radius-s);
+  cursor: pointer;
+  color: var(--ads-color-body-700);
+  transition: background 0.15s;
+}
+
+.TF-step-back:hover,
+.TF-step-close:hover {
+  background: var(--ads-color-body-200);
+}
+
+.TF-step-title {
+  flex: 1;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--ads-color-body-700);
+}
+
+.TF-step-close {
+  margin-left: auto;
+}
+
+/* ──── Confirmation card ──── */
+.TF-confirm-card {
+  background: var(--ads-color-body-100);
+  border: 1px solid var(--ads-color-body-300);
+  border-radius: var(--ads-radius-s);
+  padding: var(--ads-space-s);
+}
+
+.TF-confirm-banners {
+  margin-bottom: var(--ads-space-xxs);
+}
+
+.TF-confirm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ads-space-s);
+  padding: var(--ads-space-xxxs) 0;
+}
+
+.TF-confirm-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--ads-color-body-600);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.TF-confirm-value {
+  flex: 1;
+  min-width: 0;
+}
+
+.TF-confirm-acct-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ads-color-body-700);
+  line-height: 22px;
+}
+
+.TF-confirm-acct-type {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ads-color-body-600);
+  line-height: 20px;
+}
+
+.TF-confirm-amount {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--ads-color-body-700);
+}
+
+.TF-confirm-divider {
+  height: 1px;
+  background: var(--ads-color-body-300);
+}
+
+.TF-confirm-note {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-600);
+  margin: var(--ads-space-xxs) 0;
+}
+
+/* ──── Success screen ──── */
+.TF-success-screen {
+  text-align: center;
+  max-width: 440px;
+}
+
+.TF-success-icon {
+  color: var(--ads-color-primary-400);
+  margin-bottom: var(--ads-space-xxs);
+}
+
+.TF-success-title {
+  margin: 0 0 var(--ads-space-micro);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ads-color-body-700);
+}
+
+.TF-success-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-600);
+  margin: 0 0 var(--ads-space-s);
+}
+
+.TF-success-ref {
+  background: var(--ads-color-body-200);
+  border-radius: var(--ads-radius-s);
+  padding: var(--ads-space-xxs);
+  margin-bottom: var(--ads-space-s);
+}
+
+.TF-success-ref-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--ads-color-body-600);
+  margin-bottom: var(--ads-space-nano);
+}
+
+.TF-success-ref-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--ads-color-body-700);
+  letter-spacing: 0.5px;
+  font-family: monospace, var(--ads-font-body);
+}
+
+.TF-success-done {
+  margin: 0 auto;
+}
+
+/* ──── Dialog / Modal ──── */
+.TF-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ads-color-overlay-400);
+  padding: var(--ads-space-xxs);
+}
+
+.TF-dialog {
+  background: var(--ads-color-body-100);
+  border-radius: var(--ads-radius-s);
+  box-shadow: var(--ads-shadow-overlay);
+  width: 100%;
+  max-width: 400px;
+  padding: var(--ads-space-s);
+  animation: dialogFadeIn 0.15s ease-out;
+}
+
+@keyframes dialogFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.TF-dialog-title {
+  margin: 0 0 var(--ads-space-micro);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--ads-color-body-700);
+}
+
+.TF-dialog-body {
+  margin-bottom: var(--ads-space-xxs);
+}
+
+.TF-dialog-body p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ads-color-body-600);
+}
+
+.TF-dialog-actions {
+  display: flex;
+  gap: var(--ads-space-micro);
+  justify-content: flex-end;
+}
+
+.TF-dialog-btn {
+  padding: 8px 20px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  border-radius: var(--ads-radius-pill);
+  cursor: pointer;
+  transition: background 0.15s;
+  border: none;
+}
+
+.TF-dialog-btn--primary {
+  background: var(--ads-color-primary-400);
+  color: #fff;
+}
+
+.TF-dialog-btn--primary:hover {
+  background: var(--ads-color-primary-500);
+}
+
+.TF-dialog-btn--secondary {
+  background: transparent;
+  color: var(--ads-color-body-700);
+  border: 1px solid var(--ads-color-body-400);
+}
+
+.TF-dialog-btn--secondary:hover {
+  background: var(--ads-color-body-200);
+}
+
+.TF-dialog-btn--danger {
+  background: var(--ads-color-danger-400);
+  color: #fff;
+}
+
+.TF-dialog-btn--danger:hover {
+  background: var(--ads-color-danger-600);
+}
+
+/* ──── Dark theme overrides ──── */
+[data-theme="dark"] .TF-banner-dismiss:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .TF-dropdown-option:hover {
+  background: var(--ads-color-body-300);
+}
+
+[data-theme="dark"] .TF-swap-btn:hover:not(:disabled) {
+  background: var(--ads-color-body-300);
+}
+
+[data-theme="dark"] .TF-step-back:hover,
+[data-theme="dark"] .TF-step-close:hover {
+  background: var(--ads-color-body-300);
+}

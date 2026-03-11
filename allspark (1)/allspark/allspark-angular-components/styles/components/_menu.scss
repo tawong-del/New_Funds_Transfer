@@ -1,0 +1,17 @@
+// TODO: Remove this file once the legacy-menu is removed due to deprecation expiration
+.q-legacy-menu-header {
+  margin: var(--ads-size-xs) var(--ads-size-xxs);
+  color: var(--ads-color-body-contrast-100);
+}
+
+.q-legacy-menu-section {
+  margin: var(--ads-size-micro) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.q-legacy-menu-item {
+  & > .q-icon {
+    margin-right: var(--ads-size-xxxs);
+  }
+}

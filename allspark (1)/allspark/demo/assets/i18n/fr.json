@@ -1,0 +1,52 @@
+{
+  "darkTheme": "Thème sombre",
+  "demos": {
+    "dateOfBirth": {
+      "title": "Date de naissance",
+      "invalidMinAge": "Message d'âge minimum personnalisé avec {{minAge}} ans",
+      "invalidMaxAge": "Message d'âge maximum personnalisé avec {{maxAge}} ans",
+      "is2000": "L'année ne peut être 2000"
+    },
+    "stepper": {
+      "title": "Stepper"
+    },
+    "data-table": {
+      "title": "tableau de données"
+    },
+    "progressBar": {
+      "title": "Barre de Progression "
+    },
+    "dropmenu": {
+      "title": "Menu déroulant - menu d'actions",
+      "select-option": "Sélectionner une option",
+      "option": "Option sélectionnée: ",
+      "disable": "Désactiver le focus",
+      "departments": {
+        "engineering": "Ingénierie",
+        "design": "Design",
+        "sales": "Ventes",
+        "marketing": "Marketing",
+        "other": "Autre"
+      },
+      "departmentCount": {
+        "none": "(aucun membre)",
+        "one": "(1 membre)",
+        "other": "({{count}} membres)"
+      }
+    },
+    "tabs": {
+      "overview": "Overview FR",
+      "api": "API FR",
+      "options": {
+        "option1": "Il s'agit d'une option française 1",
+        "option2": "Il s'agit d'une option française 2",
+        "option3": "Il s'agit d'une option française 3",
+        "option4": "Il s'agit d'une option française 4",
+        "option5": "Il s'agit d'une option française 5",
+        "option6": "Il s'agit d'une option française 6",
+        "option7": "Il s'agit d'une option française 7",
+        "option8": "Il s'agit d'une option française 8"
+      }
+    }
+  }
+}

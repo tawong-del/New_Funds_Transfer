@@ -1,0 +1,60 @@
+{
+  "darkTheme": "Dark Theme",
+  "demos": {
+    "dateOfBirth": {
+      "title": "Date of Birth",
+      "invalidMinAge": "Custom minimum age message with {{minAge}} years old",
+      "invalidMaxAge": "Custom maximum age message with {{maxAge}} years old",
+      "is2000": "Year can't be 2000"
+    },
+    "stepper": {
+      "title": "Stepper"
+    },
+    "data-table": {
+      "title": "Data Table"
+    },
+    "progressBar": {
+      "title": "Progress Bar"
+    },
+    "dropmenu": {
+      "title": "Dropmenu - Action menu",
+      "select-option": "Select an option",
+      "option": "Selected option: ",
+      "disable": "Disable Focused",
+      "departments": {
+        "engineering": "Engineering",
+        "design": "Design",
+        "sales": "Sales",
+        "marketing": "Marketing",
+        "other": "Other"
+      },
+      "departmentCount": {
+        "none": "(no members)",
+        "one": "(1 member)",
+        "other": "({{count}} members)"
+      }
+    },
+    "accordion": {
+      "title": "Accordion"
+    },
+    "wizard": {
+      "title": "wizard",
+      "nextCustom": "Next (Custom)",
+      "backCustom": "Back (Custom)"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "api": "API",
+      "options": {
+        "option1": "Option 1",
+        "option2": "Option 2",
+        "option3": "Option 3",
+        "option4": "Option 4",
+        "option5": "Option 5",
+        "option6": "Option 6",
+        "option7": "Option 7",
+        "option8": "Option 8"
+      }
+    }
+  }
+}

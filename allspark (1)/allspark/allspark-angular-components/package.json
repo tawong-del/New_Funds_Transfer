@@ -1,0 +1,325 @@
+{
+  "name": "@questrade/allspark-angular-components",
+  "version": "22.1.0-preview.11",
+  "keywords": [
+    "allspark",
+    "angular",
+    "ui",
+    "components"
+  ],
+  "author": "Allspark Team <questrade-scrumteam-allspark@questrade.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/questrade/allspark/web/allspark-angular-components"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=20.3.15",
+    "@angular/core": ">=20.3.15",
+    "@angular/forms": ">=20.3.15",
+    "@angular/router": ">=20.3.15",
+    "@angular/animations": ">=20.3.15",
+    "@angular/cdk": ">=20.2.13",
+    "@questrade/allspark-icons": ">=2.4.0",
+    "@jsverse/transloco": ">=7.6.1 <8.0.0",
+    "@amcharts/amcharts5": ">=5.3.12 <6.0.0",
+    "@floating-ui/dom": ">=1.7.2 <2.0.0",
+    "@questrade/allspark-design-tokens": ">=1.2.1"
+  },
+  "peerDependenciesMeta": {
+    "@angular/forms": {
+      "optional": true
+    },
+    "@angular/router": {
+      "optional": true
+    },
+    "@angular/animations": {
+      "optional": true
+    },
+    "@angular/cdk": {
+      "optional": true
+    },
+    "@questrade/allspark-icons": {
+      "optional": true
+    },
+    "@jsverse/transloco": {
+      "optional": true
+    },
+    "@amcharts/amcharts5": {
+      "optional": true
+    },
+    "@floating-ui/dom": {
+      "optional": true
+    },
+    "@questrade/allspark-design-tokens": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.tools.q3.questech.io/artifactory/api/npm/npm-main/"
+  },
+  "i18n": [
+    {
+      "scope": "allspark",
+      "path": "transloco/i18n/allspark"
+    },
+    {
+      "scope": "allspark-country-picker",
+      "path": "transloco/i18n/allspark-country-picker"
+    },
+    {
+      "scope": "allspark-phone-number",
+      "path": "transloco/i18n/allspark-phone-number"
+    }
+  ],
+  "module": "fesm2022/questrade-allspark-angular-components.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components.mjs"
+    },
+    "./accordion": {
+      "types": "./accordion/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-accordion.mjs"
+    },
+    "./advanced-dropdown": {
+      "types": "./advanced-dropdown/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-advanced-dropdown.mjs"
+    },
+    "./autocomplete": {
+      "types": "./autocomplete/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-autocomplete.mjs"
+    },
+    "./badge": {
+      "types": "./badge/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-badge.mjs"
+    },
+    "./banner": {
+      "types": "./banner/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-banner.mjs"
+    },
+    "./bar-chart": {
+      "types": "./bar-chart/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-bar-chart.mjs"
+    },
+    "./button": {
+      "types": "./button/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-button.mjs"
+    },
+    "./card": {
+      "types": "./card/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-card.mjs"
+    },
+    "./carousel": {
+      "types": "./carousel/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-carousel.mjs"
+    },
+    "./checkbox": {
+      "types": "./checkbox/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-checkbox.mjs"
+    },
+    "./chip": {
+      "types": "./chip/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-chip.mjs"
+    },
+    "./core/animations": {
+      "types": "./core/animations/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-animations.mjs"
+    },
+    "./core/components": {
+      "types": "./core/components/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-components.mjs"
+    },
+    "./core/directives": {
+      "types": "./core/directives/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-directives.mjs"
+    },
+    "./core/pipes": {
+      "types": "./core/pipes/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-pipes.mjs"
+    },
+    "./core/services": {
+      "types": "./core/services/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-services.mjs"
+    },
+    "./core/testing": {
+      "types": "./core/testing/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-testing.mjs"
+    },
+    "./core/utils": {
+      "types": "./core/utils/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-core-utils.mjs"
+    },
+    "./country-picker": {
+      "types": "./country-picker/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-country-picker.mjs"
+    },
+    "./date-of-birth": {
+      "types": "./date-of-birth/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-date-of-birth.mjs"
+    },
+    "./datepicker": {
+      "types": "./datepicker/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-datepicker.mjs"
+    },
+    "./dialog": {
+      "types": "./dialog/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-dialog.mjs"
+    },
+    "./divider": {
+      "types": "./divider/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-divider.mjs"
+    },
+    "./drawer": {
+      "types": "./drawer/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-drawer.mjs"
+    },
+    "./dropdown": {
+      "types": "./dropdown/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-dropdown.mjs"
+    },
+    "./dropmenu": {
+      "types": "./dropmenu/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-dropmenu.mjs"
+    },
+    "./form-control": {
+      "types": "./form-control/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-form-control.mjs"
+    },
+    "./grid": {
+      "types": "./grid/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-grid.mjs"
+    },
+    "./icon": {
+      "types": "./icon/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-icon.mjs"
+    },
+    "./input": {
+      "types": "./input/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-input.mjs"
+    },
+    "./interactive-icon": {
+      "types": "./interactive-icon/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-interactive-icon.mjs"
+    },
+    "./legacy-menu": {
+      "types": "./legacy-menu/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-legacy-menu.mjs"
+    },
+    "./link": {
+      "types": "./link/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-link.mjs"
+    },
+    "./list": {
+      "types": "./list/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-list.mjs"
+    },
+    "./menu": {
+      "types": "./menu/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-menu.mjs"
+    },
+    "./modal": {
+      "types": "./modal/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-modal.mjs"
+    },
+    "./overlay": {
+      "types": "./overlay/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-overlay.mjs"
+    },
+    "./paginator": {
+      "types": "./paginator/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-paginator.mjs"
+    },
+    "./phone-number": {
+      "types": "./phone-number/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-phone-number.mjs"
+    },
+    "./pie-chart": {
+      "types": "./pie-chart/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-pie-chart.mjs"
+    },
+    "./popover": {
+      "types": "./popover/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-popover.mjs"
+    },
+    "./progress-bar": {
+      "types": "./progress-bar/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-progress-bar.mjs"
+    },
+    "./promotional-message": {
+      "types": "./promotional-message/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-promotional-message.mjs"
+    },
+    "./radio": {
+      "types": "./radio/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-radio.mjs"
+    },
+    "./scroll-area": {
+      "types": "./scroll-area/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-scroll-area.mjs"
+    },
+    "./skeleton": {
+      "types": "./skeleton/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-skeleton.mjs"
+    },
+    "./slider": {
+      "types": "./slider/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-slider.mjs"
+    },
+    "./spinner": {
+      "types": "./spinner/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-spinner.mjs"
+    },
+    "./spoiler": {
+      "types": "./spoiler/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-spoiler.mjs"
+    },
+    "./stepper": {
+      "types": "./stepper/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-stepper.mjs"
+    },
+    "./switch": {
+      "types": "./switch/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-switch.mjs"
+    },
+    "./table": {
+      "types": "./table/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-table.mjs"
+    },
+    "./tabs": {
+      "types": "./tabs/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-tabs.mjs"
+    },
+    "./textarea": {
+      "types": "./textarea/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-textarea.mjs"
+    },
+    "./toast": {
+      "types": "./toast/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-toast.mjs"
+    },
+    "./toggle-button": {
+      "types": "./toggle-button/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-toggle-button.mjs"
+    },
+    "./tooltip": {
+      "types": "./tooltip/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-tooltip.mjs"
+    },
+    "./transloco": {
+      "types": "./transloco/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-transloco.mjs"
+    },
+    "./wizard": {
+      "types": "./wizard/index.d.ts",
+      "default": "./fesm2022/questrade-allspark-angular-components-wizard.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

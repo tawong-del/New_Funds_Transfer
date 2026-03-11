@@ -1,0 +1,5 @@
+@use '../resets';
+
+.q-reset-button {
+  @include resets.q-reset-button;
+}

@@ -1,0 +1,57 @@
+@use './mixins';
+
+.q-display-xl {
+  @include mixins.q-display-xl;
+}
+
+.q-display-l {
+  @include mixins.q-display-l;
+}
+
+.q-display-m {
+  @include mixins.q-display-m;
+}
+
+.q-display-s {
+  @include mixins.q-display-s;
+}
+
+.q-display-xs {
+  @include mixins.q-display-xs;
+}
+
+.q-subtitle {
+  @include mixins.q-subtitle;
+}
+
+.q-body {
+  &-l {
+    @include mixins.q-body-l;
+  }
+
+  &-m {
+    @include mixins.q-body-m;
+  }
+
+  &-s {
+    @include mixins.q-body-s;
+  }
+}
+
+.q-overline {
+  @include mixins.q-overline;
+}
+
+.q-note {
+  @include mixins.q-note;
+}
+
+.q-cta {
+  &-1 {
+    @include mixins.q-cta-1;
+  }
+
+  &-2 {
+    @include mixins.q-cta-2;
+  }
+}

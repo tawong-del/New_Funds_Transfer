@@ -1,0 +1,208 @@
+/* App shell – Transfer Positions web layout */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ads-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ads-color-body-700);
+  background-color: var(--ads-color-body-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ──── Top navigation bar ──── */
+.AppNav {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 var(--ads-space-xxs);
+  background: var(--ads-color-body-100);
+  border-bottom: 1px solid var(--ads-color-body-300);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.AppNav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-space-micro);
+  flex-shrink: 0;
+}
+
+.AppNav-hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--ads-radius-s);
+  cursor: pointer;
+  color: var(--ads-color-body-700);
+}
+
+.AppNav-hamburger:hover {
+  background: var(--ads-color-body-300);
+}
+
+.AppNav-center {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-right: auto;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.AppNav-tab {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--ads-space-xxxs);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--ads-font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ads-color-body-600);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.AppNav-tab:hover {
+  color: var(--ads-color-body-700);
+}
+
+.AppNav-tab--active {
+  color: var(--ads-color-body-700);
+  font-weight: 600;
+  border-bottom-color: var(--ads-color-body-700);
+}
+
+.AppNav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--ads-space-micro);
+  flex-shrink: 0;
+}
+
+.AppNav-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--ads-radius-s);
+  cursor: pointer;
+  color: var(--ads-color-body-600);
+}
+
+.AppNav-icon-btn:hover {
+  background: var(--ads-color-body-300);
+  color: var(--ads-color-body-700);
+}
+
+.AppNav-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ads-color-primary-400);
+  color: #fff;
+  font-family: var(--ads-font-body);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ──── App layout with sidebar ──── */
+.AppLayout {
+  display: flex;
+  flex: 1;
+}
+
+/* ──── Left sidebar (icons) ──── */
+.AppSidebar {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ads-space-nano);
+  width: 56px;
+  padding: var(--ads-space-xxs) 0;
+  background: var(--ads-color-body-100);
+  border-right: 1px solid var(--ads-color-body-300);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .AppSidebar {
+    display: flex;
+  }
+}
+
+.AppSidebar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--ads-radius-s);
+  cursor: pointer;
+  color: var(--ads-color-body-600);
+  transition: background 0.15s, color 0.15s;
+}
+
+.AppSidebar-icon:hover {
+  background: var(--ads-color-body-300);
+  color: var(--ads-color-body-700);
+}
+
+/* ──── Page content area ──── */
+.AppContent {
+  flex: 1;
+  min-width: 0;
+  max-width: 1100px;
+  padding: var(--ads-space-m) var(--ads-space-m);
+}
+
+@media (max-width: 768px) {
+  .AppContent {
+    padding: var(--ads-space-xxs) var(--ads-space-xxs);
+  }
+}
+
+/* ──── Nav responsive ──── */
+@media (max-width: 768px) {
+  .AppNav-center {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+@use './variables';
+
+%q-focus-indicator-base {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    border-radius: inherit;
+    box-sizing: border-box;
+    pointer-events: none;
+    translate: -50% -50%;
+    opacity: 0;
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+// default focus indicator class
+// applies an inner border + outer box-shadow to represent the focus indicator's "double borders"
+// provides the best visuals, i.e. not jagged borders/corners
+// important: only applies if the attached element support pseudo-elements (before/after)
+.q-focus-indicator {
+  @extend %q-focus-indicator-base;
+
+  &::before {
+    border: variables.$q-focus-indicator-inner-width solid variables.$q-focus-indicator-inner-color;
+    box-shadow: 0 0 0 variables.$q-focus-indicator-outer-width
+      variables.$q-focus-indicator-outer-color;
+  }
+}
+
+// inset focus indicator class
+// same as default, but the outer border stays within the element boundaries
+// can be useful on elements within narrow or limited spaces or in case of clipping
+// important: only applies if the attached element support pseudo-elements (before/after)
+.q-focus-indicator-inset {
+  @extend %q-focus-indicator-base;
+
+  &::before {
+    border: variables.$q-focus-indicator-outer-width solid variables.$q-focus-indicator-outer-color;
+    box-shadow: 0 0 0 variables.$q-focus-indicator-inner-width
+      variables.$q-focus-indicator-inner-color inset;
+  }
+}

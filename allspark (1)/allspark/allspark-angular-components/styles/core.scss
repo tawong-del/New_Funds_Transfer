@@ -1,0 +1,17 @@
+@use '../assets/fonts/google-fonts';
+@forward './a11y';
+@forward './breakpoints';
+@forward './typography';
+@forward './patterns';
+@use 'components';
+
+html,
+:host {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

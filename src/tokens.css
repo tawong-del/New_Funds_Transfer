@@ -1,0 +1,109 @@
+/* AllSpark-aligned design tokens – Internal Positions Transfer web look */
+
+:root {
+  /* Backgrounds */
+  --ads-color-body-100: #FFFFFF;
+  --ads-color-body-200: #F8F8FA;
+  --ads-color-body-300: #F2F2F8;
+  --ads-color-body-400: #CED6E2;
+  --ads-color-body-500: #78899F;
+  --ads-color-body-600: #5E6D83;
+  --ads-color-body-700: #262D33;
+
+  /* Primary (green) */
+  --ads-color-primary-100: #EBF7EB;
+  --ads-color-primary-200: #ADE2AF;
+  --ads-color-primary-300: #56BB5B;
+  --ads-color-primary-400: #389B3C;
+  --ads-color-primary-500: #227C20;
+  --ads-color-primary-600: #1B6619;
+  --ads-color-primary-700: #165214;
+
+  /* Danger (red) */
+  --ads-color-danger-100: #FEE9EC;
+  --ads-color-danger-400: #D33E54;
+  --ads-color-danger-600: #C91A33;
+
+  /* Info (blue) */
+  --ads-color-info-100: #E8F4FD;
+  --ads-color-info-400: #0066DB;
+  --ads-color-info-500: #1565C0;
+
+  /* Caution (amber) */
+  --ads-color-caution-100: #FFF8E1;
+  --ads-color-caution-400: #9A7B2D;
+
+  /* Overlay */
+  --ads-color-overlay-400: rgba(0, 0, 0, 0.5);
+
+  /* Focus */
+  --ads-color-focus-400: #00428F;
+
+  /* Typography */
+  --ads-font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ads-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Border radius */
+  --ads-radius-s: 6px;
+  --ads-radius-m: 12px;
+  --ads-radius-l: 24px;
+  --ads-radius-pill: 1000px;
+
+  /* Spacing */
+  --ads-space-quark: 2px;
+  --ads-space-nano: 4px;
+  --ads-space-micro: 8px;
+  --ads-space-xxxs: 12px;
+  --ads-space-xxs: 16px;
+  --ads-space-xs: 20px;
+  --ads-space-s: 24px;
+  --ads-space-m: 32px;
+  --ads-space-l: 40px;
+  --ads-space-xl: 44px;
+  --ads-space-xxl: 48px;
+  --ads-space-xxxl: 56px;
+
+  /* Sizing */
+  --ads-touch-target: 44px;
+
+  /* Shadows */
+  --ads-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --ads-shadow-elevated: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --ads-shadow-overlay: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --ads-color-body-100: #1C1C1E;
+  --ads-color-body-200: #000000;
+  --ads-color-body-300: #2C2C2E;
+  --ads-color-body-400: #3A3A3C;
+  --ads-color-body-500: #8E8E93;
+  --ads-color-body-600: #AEAEB2;
+  --ads-color-body-700: #F2F2F7;
+
+  --ads-color-primary-100: #0D2B0D;
+  --ads-color-primary-200: #1A3D1A;
+  --ads-color-primary-300: #389B3C;
+  --ads-color-primary-400: #56BB5B;
+  --ads-color-primary-500: #56BB5B;
+  --ads-color-primary-600: #6ECB72;
+  --ads-color-primary-700: #ADE2AF;
+
+  --ads-color-danger-100: #3D1520;
+  --ads-color-danger-400: #FF4B65;
+  --ads-color-danger-600: #FF4B65;
+
+  --ads-color-info-100: #0D2744;
+  --ads-color-info-400: #64B5F6;
+  --ads-color-info-500: #64B5F6;
+
+  --ads-color-caution-100: #3D3215;
+  --ads-color-caution-400: #FFD54F;
+
+  --ads-color-focus-400: #64B5F6;
+
+  --ads-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+  --ads-shadow-elevated: 0 4px 8px rgba(0, 0, 0, 0.25);
+  --ads-shadow-overlay: 0 10px 20px rgba(0, 0, 0, 0.4);
+}

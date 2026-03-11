@@ -1,0 +1,11 @@
+@mixin q-reset-button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  user-select: none;
+}

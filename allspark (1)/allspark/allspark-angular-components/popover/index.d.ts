@@ -1,0 +1,122 @@
+import * as i0 from '@angular/core';
+import { AfterViewInit, OnDestroy } from '@angular/core';
+
+type QPopoverPlacement = 'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end';
+
+declare class QPopoverDirective implements AfterViewInit, OnDestroy {
+    readonly opened: i0.OutputEmitterRef<void>;
+    readonly closed: i0.OutputEmitterRef<void>;
+    placement: QPopoverPlacement;
+    offset: number;
+    _hostClass: string;
+    _positioningDisabled: i0.WritableSignal<boolean>;
+    _arrowHeight: number;
+    _arrowWidth: number;
+    private readonly _popoverElement;
+    private readonly _zone;
+    private readonly _document;
+    private _popoverArrowElement;
+    private _popoverTriggerElement;
+    private _autoUpdateCleanup;
+    constructor();
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    getPopoverTriggerElement(): HTMLElement | null;
+    setPopoverTriggerElement(element: HTMLElement | null): void;
+    getPopoverArrowElement(): SVGElement | null;
+    setPopoverArrowElement(element: SVGElement | null): void;
+    private _setBeforeToggleListener;
+    private _handleBeforeToggle;
+    private _updatePosition;
+    private _updatePopoverPosition;
+    private _updateArrowPosition;
+    private _attachAndPosition;
+    private _detachPositioning;
+    static ɵfac: i0.ɵɵFactoryDeclaration<QPopoverDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<QPopoverDirective, never, never, { "placement": { "alias": "qPopoverPlacement"; "required": false; }; "offset": { "alias": "qPopoverOffset"; "required": false; }; }, { "opened": "opened"; "closed": "closed"; }, never, never, true, never>;
+}
+
+declare class QPopoverComponent implements AfterViewInit, OnDestroy {
+    dataQt: string;
+    showArrow: boolean;
+    showDelay: number;
+    hideDelay: number;
+    _hostClass: string;
+    private _disableAutoTriggerSetup;
+    private _popoverTriggerElement;
+    private _hideDelayTimer;
+    private _showDelayTimer;
+    private readonly _popoverElement;
+    private readonly _zone;
+    private readonly _document;
+    private readonly _destroy$;
+    readonly _popoverDirective: QPopoverDirective;
+    constructor();
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    _getHostElement(): HTMLElement;
+    _disableAutoTriggerSetupMethod(): void;
+    _triggerMouseEnter(): void;
+    _triggerMouseLeave(): void;
+    private _startHideTimer;
+    private _clearHideTimer;
+    private _clearShowTimer;
+    private _startShowTimer;
+    private _showPopoverOnHover;
+    private _setArrowElement;
+    private _setTriggerElement;
+    private _setHoverListeners;
+    private _setTriggerListeners;
+    private _shouldTriggerOnHover;
+    private _handleTriggerMouseEnter;
+    private _handleTriggerMouseLeave;
+    private _handleTriggerFocus;
+    private _handleTriggerBlur;
+    private _handlePopoverMouseEnter;
+    private _handlePopoverMouseLeave;
+    private _handlePopoverFocusIn;
+    private _handlePopoverFocusOut;
+    private _cleanup;
+    private _clearTriggerListeners;
+    private _trackIdChanges;
+    private _resetTrigger;
+    static ɵfac: i0.ɵɵFactoryDeclaration<QPopoverComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QPopoverComponent, "[popover][q-popover], [popover][qPopover]", never, { "dataQt": { "alias": "dataQt"; "required": false; }; "showArrow": { "alias": "qPopoverShowArrow"; "required": false; }; "showDelay": { "alias": "qPopoverShowDelay"; "required": false; }; "hideDelay": { "alias": "qPopoverHideDelay"; "required": false; }; }, {}, never, ["*"], true, [{ directive: typeof QPopoverDirective; inputs: { "qPopoverPlacement": "qPopoverPlacement"; "qPopoverOffset": "qPopoverOffset"; }; outputs: {}; }]>;
+    static ngAcceptInputType_showArrow: unknown;
+    static ngAcceptInputType_showDelay: unknown;
+    static ngAcceptInputType_hideDelay: unknown;
+}
+
+declare class QPopoverTriggerDirective implements AfterViewInit, OnDestroy {
+    popover: i0.InputSignal<QPopoverComponent>;
+    dataQt: i0.InputSignal<string>;
+    private _popoverOpen;
+    private _popoverHost;
+    private _cleanupHoverListeners;
+    private readonly _renderer;
+    private readonly _cdr;
+    private readonly _triggerElement;
+    constructor();
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    togglePopover(): void;
+    openPopover(): void;
+    closePopover(): void;
+    _handleKeydown(event: KeyboardEvent): void;
+    _handleClick(): void;
+    private _initializePopoverConnection;
+    private _setupPopoverConnection;
+    private _cleanupPopoverConnection;
+    private _handlePopoverToggle;
+    private _setupTriggerHoverListeners;
+    private _isHintPopover;
+    private _setupTriggerListeners;
+    private _setupPopoverListeners;
+    private _handleMouseEnter;
+    private _handleMouseLeave;
+    static ɵfac: i0.ɵɵFactoryDeclaration<QPopoverTriggerDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<QPopoverTriggerDirective, "[qPopoverTriggerFor]", ["qPopoverTrigger"], { "popover": { "alias": "qPopoverTriggerFor"; "required": true; "isSignal": true; }; "dataQt": { "alias": "qPopoverTriggerDataQt"; "required": false; "isSignal": true; }; }, {}, never, never, true, never>;
+}
+
+export { QPopoverComponent, QPopoverDirective, QPopoverTriggerDirective };
+export type { QPopoverPlacement };

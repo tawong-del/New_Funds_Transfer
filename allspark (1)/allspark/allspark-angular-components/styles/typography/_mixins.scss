@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use './presets' as presets;
+
+@mixin font-definition($fontPreset, $tokenPrefix: null) {
+  $font-family-value: #{map.get($fontPreset, font-family)};
+  $font-size-value: #{map.get($fontPreset, font-size)};
+  $font-style-value: #{map.get($fontPreset, font-style)};
+  $font-weight-value: #{map.get($fontPreset, font-weight)};
+  $letter-spacing-value: #{map.get($fontPreset, letter-spacing)};
+  $line-height-value: #{map.get($fontPreset, line-height)};
+  $text-transform-value: #{map.get($fontPreset, text-transform)};
+
+  @if $tokenPrefix {
+    $font-family-token: --awds-#{$tokenPrefix}-font-family;
+    $font-size-token: --awds-#{$tokenPrefix}-font-size;
+    $font-style-token: --awds-#{$tokenPrefix}-font-style;
+    $font-weight-token: --awds-#{$tokenPrefix}-font-weight;
+    $letter-spacing-token: --awds-#{$tokenPrefix}-letter-spacing;
+    $line-height-token: --awds-#{$tokenPrefix}-line-height;
+    $text-transform-token: --awds-#{$tokenPrefix}-text-transform;
+
+    font-family: var($font-family-token, $font-family-value);
+    font-size: var($font-size-token, $font-size-value);
+    font-style: var($font-style-token, $font-style-value);
+    font-weight: var($font-weight-token, $font-weight-value);
+    letter-spacing: var($letter-spacing-token, $letter-spacing-value);
+    line-height: var($line-height-token, $line-height-value);
+    text-transform: var($text-transform-token, $text-transform-value);
+  } @else {
+    font-family: $font-family-value;
+    font-size: $font-size-value;
+    font-style: $font-style-value;
+    font-weight: $font-weight-value;
+    letter-spacing: $letter-spacing-value;
+    line-height: $line-height-value;
+    text-transform: $text-transform-value;
+  }
+}
+
+@mixin set-font-token-value($fontPreset, $tokenPrefix: null) {
+  --awds-#{$tokenPrefix}-font-family: #{map.get($fontPreset, font-family)};
+  --awds-#{$tokenPrefix}-font-size: #{map.get($fontPreset, font-size)};
+  --awds-#{$tokenPrefix}-font-style: #{map.get($fontPreset, font-style)};
+  --awds-#{$tokenPrefix}-font-weight: #{map.get($fontPreset, font-weight)};
+  --awds-#{$tokenPrefix}-letter-spacing: #{map.get($fontPreset, letter-spacing)};
+  --awds-#{$tokenPrefix}-line-height: #{map.get($fontPreset, line-height)};
+  --awds-#{$tokenPrefix}-text-transform: #{map.get($fontPreset, text-transform)};
+}
+
+@mixin q-display-xl {
+  @include font-definition(presets.$display-xl);
+}
+
+@mixin q-display-l {
+  @include font-definition(presets.$display-l);
+}
+
+@mixin q-display-m {
+  @include font-definition(presets.$display-m);
+}
+
+@mixin q-display-s {
+  @include font-definition(presets.$display-s);
+}
+
+@mixin q-display-xs {
+  @include font-definition(presets.$display-xs);
+}
+
+@mixin q-subtitle {
+  @include font-definition(presets.$subtitle);
+}
+
+@mixin q-body-l {
+  @include font-definition(presets.$body-l);
+}
+
+@mixin q-body-m {
+  @include font-definition(presets.$body-m);
+}
+
+@mixin q-body-s {
+  @include font-definition(presets.$body-s);
+}
+
+@mixin q-overline {
+  @include font-definition(presets.$overline);
+}
+
+@mixin q-note {
+  @include font-definition(presets.$note);
+}
+
+@mixin q-cta-1 {
+  @include font-definition(presets.$cta-1);
+}
+
+@mixin q-cta-2 {
+  @include font-definition(presets.$cta-2);
+}

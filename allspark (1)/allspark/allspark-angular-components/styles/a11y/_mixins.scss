@@ -1,0 +1,53 @@
+@use './variables';
+
+// mixin for elements that do not support pseudo-elements (before/after), i.e: input, textarea
+// applies a two-level box-shadow to represent the focus indicator's "double borders"
+// offers a good support on desktop and mobile browsers
+// some jagged borders/corners can occur when attached to elements with border-radius
+@mixin q-focus-indicator(
+  $width-inner: variables.$q-focus-indicator-inner-width,
+  $color-inner: variables.$q-focus-indicator-inner-color,
+  $inset-inner: true,
+  $width-outer: variables.$q-focus-indicator-outer-width,
+  $color-outer: variables.$q-focus-indicator-outer-color,
+  $inset-outer: false
+) {
+  outline: none;
+  box-shadow:
+    0 0 0 $width-inner $color-inner if($inset-inner == true, inset, null),
+    0 0 0 $width-outer $color-outer if($inset-outer == true, inset, null);
+}
+
+// same as default mixin, but the outer border stays within the element boundaries
+// can be useful on elements within narrow or limited spaces or in case of clipping
+@mixin q-focus-indicator-inset(
+  $width-inner: variables.$q-focus-indicator-inner-width,
+  $color-inner: variables.$q-focus-indicator-outer-color,
+  $inset-inner: true,
+  $width-outer: calc(variables.$q-focus-indicator-outer-width * 2),
+  $color-outer: variables.$q-focus-indicator-inner-color,
+  $inset-outer: true
+) {
+  @include q-focus-indicator(
+    $width-inner,
+    $color-inner,
+    $inset-inner,
+    $width-outer,
+    $color-outer,
+    $inset-outer
+  );
+}
+
+// Hides content visually but keeps it accessible to screen readers.
+// This is the recommended approach by WebAIM for hidden content that should remain accessible.
+// Reference: https://webaim.org/techniques/css/invisiblecontent/#techniques:~:text=receive%20keyboard%20focus.-,CSS%20clip,-%7Bclip%3A%20rect(1px
+@mixin q-invisible-content {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}

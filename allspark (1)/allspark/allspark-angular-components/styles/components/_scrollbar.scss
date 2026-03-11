@@ -1,0 +1,45 @@
+@use '../breakpoints';
+
+//https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+$scrollbar-color: color-mix(in srgb, var(--ads-color-body-700) 40%, transparent);
+
+/* Works on Firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-color transparent;
+  }
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
+  background-color: $scrollbar-color;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+@include breakpoints.q-media(s-up) {
+  *::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+
+    &:vertical:hover,
+    &:horizontal:hover {
+      border: 3px solid transparent;
+    }
+  }
+}

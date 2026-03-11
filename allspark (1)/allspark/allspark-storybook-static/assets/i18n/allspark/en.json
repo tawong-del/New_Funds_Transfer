@@ -1,0 +1,88 @@
+{
+  "advanced-dropdown": {
+    "title": "",
+    "actions": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "link": "Link"
+    }
+  },
+  "banner": {
+    "actions": {
+      "ok": "OK",
+      "cancel": "Cancel"
+    }
+  },
+  "chip-datepicker": {
+    "startDate": "Start date",
+    "endDate": "End date"
+  },
+  "datepicker": {
+    "chooseDate": "Choose date",
+    "actions": {
+      "done": "Done",
+      "clear": "Clear"
+    },
+    "header": {
+      "selectMonth": "Select a month",
+      "selectYear": "Select a year",
+      "previousMonth": "Previous month",
+      "nextMonth": "Next month"
+    },
+    "weekdays": {
+      "short": {
+        "monday": "M",
+        "tuesday": "T",
+        "wednesday": "W",
+        "thursday": "T",
+        "friday": "F",
+        "saturday": "S",
+        "sunday": "S"
+      }
+    }
+  },
+  "dropmenu": {
+    "notFoundMessage": "Could not find any results"
+  },
+  "modal": {
+    "actions": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "link": "Link"
+    }
+  },
+  "spoiler": {
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "dateOfBirth": {
+    "label": "Date of birth",
+    "hint": "Day / Month / Year",
+    "requiredDay": "Day is required",
+    "invalidDay": "Day is not valid",
+    "invalidMinAge": "You must be at least {{minAge}} years old",
+    "invalidMaxAge": "Age cannot be greater than {{maxAge}} years",
+    "requiredMonth": "Month is required",
+    "requiredYear": "Year is required",
+    "invalidYear": "Year is not valid",
+    "maxYear": "Year can't be more than current year",
+    "futureDate": "Date of birth cannot be in the future",
+    "invalidDate": "Date of birth is not valid",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year"
+  },
+  "wizard": {
+    "next": "Next",
+    "back": "Back",
+    "moreOptions": "More options"
+  },
+  "table": {
+    "footer": {
+      "showMore": "Show {{nextBatchSize}} more",
+      "showingZero": "Showing no items",
+      "showingOne": "Showing 1 item",
+      "showingMultiple": "Showing {{totalItems}} items"
+    }
+  }
+}

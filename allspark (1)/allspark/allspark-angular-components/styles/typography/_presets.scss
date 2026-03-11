@@ -1,0 +1,142 @@
+$display-xl: (
+  font-family: var(--ads-font-family-heading),
+  font-size: var(--ads-font-size-xxxl),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-xxxl),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$display-l: (
+  font-family: var(--ads-font-family-heading),
+  font-size: var(--ads-font-size-xxl),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-xxl),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$display-m: (
+  font-family: var(--ads-font-family-heading),
+  font-size: var(--ads-font-size-xl),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-xl),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$display-s: (
+  font-family: var(--ads-font-family-heading),
+  font-size: var(--ads-font-size-l),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-l),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$display-xs: (
+  font-family: var(--ads-font-family-heading),
+  font-size: var(--ads-font-size-m),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-s),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$subtitle: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-m),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-semi-bold),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-m),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$body-l: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-m),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-m),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$body-m: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-s),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-s),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$body-s: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-xs),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-xs),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$overline: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-xxs),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-bold),
+  letter-spacing: 0.1em,
+  line-height: var(--ads-font-line-height-xxs),
+  text-decoration: none,
+  text-transform: uppercase,
+);
+
+$note: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-xxs),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-regular),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-xxs),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$cta-1: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-s),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-semi-bold),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-s),
+  text-decoration: none,
+  text-transform: none,
+);
+
+$cta-2: (
+  font-family: var(--ads-font-family-body),
+  font-size: var(--ads-font-size-xs),
+  font-style: inherit,
+  font-weight: var(--ads-font-weight-semi-bold),
+  letter-spacing: 0,
+  line-height: var(--ads-font-line-height-xs),
+  text-decoration: none,
+  text-transform: none,
+);

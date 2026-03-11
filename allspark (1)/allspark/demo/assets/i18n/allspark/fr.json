@@ -1,0 +1,88 @@
+{
+  "advanced-dropdown": {
+    "title": "",
+    "actions": {
+      "ok": "D'accord",
+      "cancel": "Annuler",
+      "link": "Lien"
+    }
+  },
+  "banner": {
+    "actions": {
+      "ok": "D'accord",
+      "cancel": "Annuler"
+    }
+  },
+  "chip-datepicker": {
+    "startDate": "Date de début",
+    "endDate": "Date de fin"
+  },
+  "datepicker": {
+    "chooseDate": "Choisir date",
+    "actions": {
+      "done": "Fait",
+      "clear": "Dégager"
+    },
+    "header": {
+      "selectMonth": "Sélectionnez un mois",
+      "selectYear": "Sélectionnez une année",
+      "previousMonth": "Mois précédent",
+      "nextMonth": "Mois suivant"
+    },
+    "weekdays": {
+      "short": {
+        "monday": "L",
+        "tuesday": "M",
+        "wednesday": "M",
+        "thursday": "J",
+        "friday": "V",
+        "saturday": "S",
+        "sunday": "D"
+      }
+    }
+  },
+  "dropmenu": {
+    "notFoundMessage": "Aucun résultat n'a été trouvé"
+  },
+  "modal": {
+    "actions": {
+      "ok": "D'accord",
+      "cancel": "Annuler",
+      "link": "Lien"
+    }
+  },
+  "spoiler": {
+    "show": "Ouvrir",
+    "hide": "Cacher"
+  },
+  "dateOfBirth": {
+    "label": "Date de naissance",
+    "hint": "Jour / Mois / Année",
+    "requiredDay": "Le jour est requis",
+    "invalidDay": "Le jour n'est pas valide",
+    "invalidMinAge": "Vous devez avoir au moins {{minAge}} ans",
+    "invalidMaxAge": "L'âge ne peut pas dépasser {{maxAge}} ans",
+    "requiredMonth": "Le mois est requis",
+    "requiredYear": "L'année est requise",
+    "invalidYear": "L'année n'est pas valide",
+    "futureDate": "La date de naissance ne peut pas être dans le futur",
+    "invalidDate": "La date de naissance n'est pas valide",
+    "maxYear": "L'année ne peut pas être supérieure à l'année en cours",
+    "day": "Jour",
+    "month": "Mois",
+    "year": "Année"
+  },
+  "wizard": {
+    "next": "Suivante",
+    "back": "Retour",
+    "moreOptions": "Plus d'options"
+  },
+  "table": {
+    "footer": {
+      "showMore": "Afficher {{ nextBatchSize }} autres",
+      "showingZero": "Affichage d'aucun élément",
+      "showingOne": "Affichage de 1 élément",
+      "showingMultiple": "Affichage de {{ totalItems }} éléments"
+    }
+  }
+}

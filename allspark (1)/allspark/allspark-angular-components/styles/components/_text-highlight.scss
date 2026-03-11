@@ -1,0 +1,7 @@
+@use '../typography';
+
+.q-text-highlight {
+  > strong.q-text-bold {
+    font-weight: var(--awds-text-highlight-highlighted-font-weight, var(--ads-font-weight-bold));
+  }
+}
